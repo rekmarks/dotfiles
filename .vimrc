@@ -4,7 +4,6 @@ set shiftwidth=2 "shift length?
 set expandtab "spaces are tabs
 set number "line numbers
 set cursorline "highlight current line
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9 "set font?
 set nowrap "remove auto wrap
 set hlsearch "highlight search
 set incsearch "highlight search
@@ -26,16 +25,6 @@ augroup END
 " - For Neovim: ~/.local/share/nvim/plugged
 call plug#begin('~/.vim/plugged')
 
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
-
-" Any valid git URL is allowed
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-" On-demand loading
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
 " Trailing whitespace
 Plug 'bronson/vim-trailing-whitespace'
 
@@ -53,9 +42,6 @@ Plug 'henrik/vim-indexed-search'
 
 " Autocompletion
 " Plug 'davidhalter/jedi-vim'
-
-" Rainbow parantheses
-Plug 'junegunn/rainbow_parentheses.vim'
 
 " Python syntax
 Plug 'hdima/python-syntax'
@@ -75,3 +61,5 @@ set background=dark
 colorscheme PaperColor
 
 
+nnoremap <A-Left> :tabprevious<CR>
+nnoremap <A-Right> :tabnext<CR>
