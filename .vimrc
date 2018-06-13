@@ -10,6 +10,7 @@ set number
   " highlight CursorColumn ctermbg=248 guibg=Grey
 " endif
 
+" This ensures that the indentation for Python is consistent.
 augroup indentation_python
 	autocmd!
 	autocmd Filetype python setlocal shiftwidth=4 softtabstop=4 tabstop=4
