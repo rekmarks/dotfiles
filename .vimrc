@@ -3,6 +3,11 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set number
+set cursorline
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+set nowrap
+set hlsearch
+set incsearch
 
 " Set column to light grey at 80 characters
 " if (exists('+colorcolumn'))
