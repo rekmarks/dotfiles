@@ -1,13 +1,13 @@
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
-set number
-set cursorline
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
-set nowrap
-set hlsearch
-set incsearch
+set tabstop=2 "tab length
+set softtabstop=2 "tab length
+set shiftwidth=2 "shift length?
+set expandtab "spaces are tabs
+set number "line numbers
+set cursorline "highlight current line
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9 "set font?
+set nowrap "remove auto wrap
+set hlsearch "highlight search
+set incsearch "highlight search
 
 " Set column to light grey at 80 characters
 " if (exists('+colorcolumn'))
@@ -21,6 +21,7 @@ augroup indentation_python
 	autocmd Filetype python setlocal shiftwidth=4 softtabstop=4 tabstop=4
 augroup END
 
+" PLUGINS PLUGINS PLUGINS
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 call plug#begin('~/.vim/plugged')
