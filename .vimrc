@@ -64,6 +64,7 @@ call plug#end()
 let g:python_highlight_space_errors = 0
 let g:python_highlight_all = 1
 
+" Add Paper Color to theme via plugin
 set background=dark
 colorscheme PaperColor
 
