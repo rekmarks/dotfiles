@@ -2,10 +2,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
-
-set t_Co=256   " This is may or may not needed.
-set background=dark
-" colorscheme PaperColor
+set number
 
 " Set column to light grey at 80 characters
 " if (exists('+colorcolumn'))
@@ -47,9 +44,6 @@ Plug 'wincent/terminus'
 " Indexed search
 Plug 'henrik/vim-indexed-search'
 
-" Basic coloring
-Plug 'NLKNguyen/papercolor-theme'
-
 " Autocompletion
 " Plug 'davidhalter/jedi-vim'
 
@@ -59,10 +53,17 @@ Plug 'junegunn/rainbow_parentheses.vim'
 " Python syntax
 Plug 'hdima/python-syntax'
 
+" Basic coloring
+Plug 'NLKNguyen/papercolor-theme'
+
 " Initialize plugin system
 call plug#end()
 
-" Python: highlighting
+"Python: highlighting
 let g:python_highlight_space_errors = 0
 let g:python_highlight_all = 1
+
+set background=dark
+colorscheme PaperColor
+
 
