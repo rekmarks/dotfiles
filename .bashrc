@@ -85,6 +85,8 @@ alias ll='ls -la'
 alias la='ls -A'
 alias l='ls -CF'
 alias ,='cd ..'
+alias n='nvim'
+alias p='python3'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -138,12 +140,15 @@ so() {
 
 COLOR_BRIGHT_GREEN="\033[38;5;10m"
 COLOR_BRIGHT_BLUE="\033[38;5;115m"
+COLOR_LIGHT_BLUE="\033[1;34m"
 COLOR_RED="\033[0;31m"
 COLOR_YELLOW="\033[0;33m"
 COLOR_GREEN="\033[0;32m"
 COLOR_PURPLE="\033[1;35m"
 COLOR_ORANGE="\033[38;5;202m"
 COLOR_BLUE="\033[34;5;115m"
+COLOR_CYAN="\033[0;36m"
+COLOR_LIGHT_CYAN="\033[1;36m"
 COLOR_WHITE="\033[0;37m"
 COLOR_GOLD="\033[38;5;142m"
 COLOR_SILVER="\033[38;5;248m"
@@ -168,11 +173,26 @@ function git_color {
   fi
 }
 
+function git_branch {
+  local git_status="$(git status 2> /dev/null)"
+  local on_branch="On branch ([^${IFS}]*)"
+  local on_commit="HEAD detached at ([^${IFS}]*)"
+
+  if [[ $git_status =~ $on_branch ]]; then
+    local branch=${BASH_REMATCH[1]}
+    echo "($branch) "
+  elif [[ $git_status =~ $on_commit ]]; then
+    local commit=${BASH_REMATCH[1]}
+    echo "($commit) "
+  fi
+}
+
 # Set Bash PS1
-PS1_DIR="\[$BOLD\]\[$COLOR_BRIGHT_BLUE\]\w"
-# PS1_GIT="\[\$(git_color)\]\[$BOLD\]\$(git_branch)\[$BOLD\]\[$COLOR_RESET\]"
-PS1_USR="\[$BOLD\]\[$COLOR_GOLD\]\u@\h"
-PS1_END="\[$BOLD\]\[$COLOR_SILVER\]$ \[$COLOR_RESET\]"
+PS1_DIR="\n\[$BOLD\]\[$COLOR_SILVER\]\w"
+PS1_GIT="\[\$(git_color)\]\[$BOLD\]\$(git_branch)\[$BOLD\]\[$COLOR_RESET\]"
+PS1_USR="\[$BOLD\]\[$COLOR_LIGHT_CYAN\]\u@\h"
+PS1_END="\[$BOLD\]\[$COLOR_LIGHT_CYAN\]\n\n ¯\_(ツ)_/¯==> \[$COLOR_RESET\]"
+
 
 PS1="${PS1_DIR} ${PS1_GIT}\
 ${PS1_USR} ${PS1_END}"
@@ -198,5 +218,16 @@ right_blacket="s/\]/$BLUE&$RESET/g;"
 no_instance="s/^\s*No instance/$RED&$RESET/g;"
 interactive="s/^<[^>]*>/$RED&$RESET/g;"
 
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+#PYENV installation
+PYENV_ROOT="$HOME/.pyenv"
+if [ -d "$PYENV_ROOT" ]
+then
+  export PYENV_ROOT
+  PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
+
+# Make sure you're also exporting PATH somewhere...
+export PATH

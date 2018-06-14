@@ -49,6 +49,15 @@ Plug 'hdima/python-syntax'
 " Basic coloring
 Plug 'NLKNguyen/papercolor-theme'
 
+" Python testing
+Plug 'PyCQA/pyflakes'
+
+" Python code checker?
+Plug 'scrooloose/syntastic'
+
+" Autoclose brackets, etc.
+Plug 'Townk/vim-autoclose'
+
 " Initialize plugin system
 call plug#end()
 
@@ -56,10 +65,22 @@ call plug#end()
 let g:python_highlight_space_errors = 0
 let g:python_highlight_all = 1
 
-" Add Paper Color to theme via plugin
-set background=dark
-colorscheme PaperColor
-
-
+" Set up Alt+Left and Alt+Right to move between tabs
 nnoremap <A-Left> :tabprevious<CR>
 nnoremap <A-Right> :tabnext<CR>
+
+" Python: Highlight self and cls keyword in class definitions
+augroup python_syntax
+  autocmd!
+  autocmd FileType python syn keyword pythonBuiltinObj self
+  autocmd FileType python syn keyword pythonBuiltinObj cls
+augroup end
+
+" Syntax: select global syntax scheme
+" Make sure this is at end of section
+try
+  set t_Co=256 " says terminal has 256 colors
+  set background=dark
+  colorscheme PaperColor
+catch
+endtry
