@@ -58,6 +58,9 @@ Plug 'scrooloose/syntastic'
 " Autoclose brackets, etc.
 Plug 'Townk/vim-autoclose'
 
+" Vim JS
+Plug 'pangloss/vim-javascript'
+
 " Initialize plugin system
 call plug#end()
 
@@ -84,3 +87,13 @@ try
   colorscheme PaperColor
 catch
 endtry
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+
+augroup javascript_folding
+    au!
+    au FileType javascript setlocal foldmethod=syntax
+augroup END
+
