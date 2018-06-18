@@ -61,6 +61,10 @@ Plug 'Townk/vim-autoclose'
 " Vim JS
 Plug 'pangloss/vim-javascript'
 
+" Markdown plugins
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
 " Initialize plugin system
 call plug#end()
 
