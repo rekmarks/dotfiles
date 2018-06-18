@@ -65,6 +65,12 @@ Plug 'pangloss/vim-javascript'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
+" Distraction-free writing
+Plug 'junegunn/goyo.vim'
+
+" Seoul color scheme
+Plug 'junegunn/seoul256.vim'
+
 " Initialize plugin system
 call plug#end()
 
@@ -87,8 +93,16 @@ augroup end
 " Make sure this is at end of section
 try
   set t_Co=256 " says terminal has 256 colors
+  " set background=dark
+  " colorscheme PaperColor
+
+  " " Unified color scheme (default: dark)
+  let g:seoul256_background = 234
+  colo seoul256
+
+  " Switch
   set background=dark
-  colorscheme PaperColor
+
 catch
 endtry
 
