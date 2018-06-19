@@ -97,7 +97,7 @@ try
   " colorscheme PaperColor
 
   " " Unified color scheme (default: dark)
-  let g:seoul256_background = 236
+  let g:seoul256_background = 234
   colo seoul256
 
   " Switch
