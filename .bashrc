@@ -141,7 +141,7 @@ so() {
 COLOR_BRIGHT_GREEN="\033[38;5;10m"
 COLOR_LIGHT_GREEN="\033[38;5;154m"
 COLOR_BRIGHT_BLUE="\033[38;5;115m"
-COLOR_LIGHT_BLUE="\033[1;34m"
+COLOR_LIGHT_BLUE="\033[38;5;86m"
 COLOR_RED="\033[0;31m"
 COLOR_YELLOW="\033[0;33m"
 COLOR_GREEN="\033[0;32m"
@@ -191,8 +191,8 @@ function git_branch {
 # Set Bash PS1
 PS1_DIR="\n\[$BOLD\]\[$COLOR_LIGHT_ORANGE\]\w"
 PS1_GIT="\[\$(git_color)\]\[$BOLD\]\$(git_branch)\[$BOLD\]\[$COLOR_RESET\]"
-PS1_USR="\[$BOLD\]\[$COLOR_LIGHT_CYAN\]\u@\h"
-PS1_END="\[$BOLD\]\[$COLOR_LIGHT_CYAN\]\n\n ¯\_(ツ)_/¯==> \[$COLOR_RESET\]"
+PS1_USR="\[$BOLD\]\[$COLOR_LIGHT_BLUE\]\u@\h"
+PS1_END="\[$BOLD\]\[$COLOR_LIGHT_BLUE\]\n\n ¯\_(ツ)_/¯==> \[$COLOR_RESET\]"
 
 PS1="${PS1_DIR} ${PS1_GIT}\
 ${PS1_USR} ${PS1_END}"
