@@ -198,7 +198,6 @@ PS1="${PS1_DIR} ${PS1_GIT}\
 ${PS1_USR} ${PS1_END}"
 
 
-
 GREEN=`echo -e '\033[92m'`
 RED=`echo -e '\033[91m'`
 CYAN=`echo -e '\033[96m'`
