@@ -7,12 +7,14 @@ set cursorline "highlight current line
 set nowrap "remove auto wrap
 set hlsearch "highlight search
 set incsearch "highlight search
+set noswapfile "avoid swap files
+set nobackup "avoid swap files
 
 " Set column to light grey at 80 characters
-" if (exists('+colorcolumn'))
-  " set colorcolumn=100
-  " highlight CursorColumn ctermbg=248 guibg=Grey
-" endif
+if (exists('+colorcolumn'))
+  set colorcolumn=80
+  highlight CursorColumn ctermbg=248 guibg=Grey
+endif
 
 " This ensures that the indentation for Python is consistent.
 augroup indentation_python
@@ -21,57 +23,25 @@ augroup indentation_python
 augroup END
 
 " PLUGINS PLUGINS PLUGINS
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
 call plug#begin('~/.vim/plugged')
 
-" Trailing whitespace
-Plug 'bronson/vim-trailing-whitespace'
+Plug 'bronson/vim-trailing-whitespace' " Trailing whitespace
+Plug 'itchyny/lightline.vim' " Status line / tab line plugin for Vim
+Plug 'mhinz/vim-startify' " Fancy start screen
+Plug 'wincent/terminus' " Enhanced terminal integration
+Plug 'henrik/vim-indexed-search' " Indexed search
+" Plug 'davidhalter/jedi-vim' " Autocompletion
+Plug 'hdima/python-syntax' " Python syntax
+" Plug 'NLKNguyen/papercolor-theme' " Basic coloring
+Plug 'PyCQA/pyflakes' " Python testing
+Plug 'scrooloose/syntastic' " Python code checker?
+Plug 'Townk/vim-autoclose' " Autoclose brackets, etc.
+Plug 'pangloss/vim-javascript' " Vim JS
+Plug 'godlygeek/tabular' " Markdown plugin
+Plug 'plasticboy/vim-markdown' " Markdown plugin
+Plug 'junegunn/goyo.vim' " Distraction-free writing
+Plug 'junegunn/seoul256.vim' " Seoul color scheme
 
-" Status line / tab line plugin for Vim
-Plug 'itchyny/lightline.vim'
-
-" Fancy start screen
-Plug 'mhinz/vim-startify'
-
-" Enhanced terminal integration
-Plug 'wincent/terminus'
-
-" Indexed search
-Plug 'henrik/vim-indexed-search'
-
-" Autocompletion
-" Plug 'davidhalter/jedi-vim'
-
-" Python syntax
-Plug 'hdima/python-syntax'
-
-" Basic coloring
-Plug 'NLKNguyen/papercolor-theme'
-
-" Python testing
-Plug 'PyCQA/pyflakes'
-
-" Python code checker?
-Plug 'scrooloose/syntastic'
-
-" Autoclose brackets, etc.
-Plug 'Townk/vim-autoclose'
-
-" Vim JS
-Plug 'pangloss/vim-javascript'
-
-" Markdown plugins
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-
-" Distraction-free writing
-Plug 'junegunn/goyo.vim'
-
-" Seoul color scheme
-Plug 'junegunn/seoul256.vim'
-
-" Initialize plugin system
 call plug#end()
 
 "Python: highlighting
@@ -81,6 +51,9 @@ let g:python_highlight_all = 1
 " Set up Alt+Left and Alt+Right to move between tabs
 nnoremap <A-Left> :tabprevious<CR>
 nnoremap <A-Right> :tabnext<CR>
+
+" Set up TAB to move between tabs
+noremap <TAB> <C-W>w
 
 " Python: Highlight self and cls keyword in class definitions
 augroup python_syntax
@@ -95,11 +68,9 @@ try
   set t_Co=256 " says terminal has 256 colors
   " set background=dark
   " colorscheme PaperColor
-
   " " Unified color scheme (default: dark)
-  let g:seoul256_background = 234
+  let g:seoul256_background = 235
   colo seoul256
-
   " Switch
   set background=dark
 
