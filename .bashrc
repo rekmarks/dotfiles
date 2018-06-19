@@ -143,6 +143,7 @@ COLOR_LIGHT_GREEN="\033[38;5;154m"
 COLOR_BRIGHT_BLUE="\033[38;5;115m"
 COLOR_LIGHT_BLUE="\033[38;5;86m"
 COLOR_RED="\033[0;31m"
+COLOR_LIGHT_RED="\033[38;5;196m"
 COLOR_YELLOW="\033[0;33m"
 COLOR_GREEN="\033[0;32m"
 COLOR_PURPLE="\033[1;35m"
@@ -163,7 +164,7 @@ function git_color {
   if [[ $git_status == "" ]]; then
     echo -e $COLOR_SILVER
   elif [[ ! $git_status =~ "working directory clean" ]]; then
-    echo -e $COLOR_RED
+    echo -e $COLOR_LIGHT_RED
   elif [[ $git_status =~ "Your branch is ahead of" ]]; then
     echo -e $COLOR_YELLOW
   elif [[ $git_status =~ "nothing to commit" ]] && \
