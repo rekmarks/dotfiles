@@ -11,10 +11,10 @@ set noswapfile "avoid swap files
 set nobackup "avoid swap files
 
 " Set column to light grey at 80 characters
-if (exists('+colorcolumn'))
-  set colorcolumn=80
-  highlight CursorColumn ctermbg=248 guibg=Grey
-endif
+" if (exists('+colorcolumn'))
+"  set colorcolumn=80
+"  highlight CursorColumn ctermbg=248 guibg=Grey
+" endif
 
 " This ensures that the indentation for Python is consistent.
 augroup indentation_python
