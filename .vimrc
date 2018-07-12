@@ -1,6 +1,7 @@
-set tabstop=2 "tab length
-set softtabstop=2 "tab length
-set shiftwidth=2 "shift length?
+" set tabstop=2 "tab length
+" set softtabstop=2 "tab length
+" set shiftwidth=2 "shift length
+set showtabline=2 "show tab dif
 set expandtab "spaces are tabs
 set number "line numbers
 set cursorline "highlight current line
@@ -11,15 +12,22 @@ set noswapfile "avoid swap files
 set nobackup "avoid swap files
 
 " Set column to light grey at 80 characters
-" if (exists('+colorcolumn'))
-"  set colorcolumn=80
-"  highlight CursorColumn ctermbg=248 guibg=Grey
-" endif
+ if (exists('+colorcolumn'))
+  set colorcolumn=80
+  highlight CursorColumn ctermbg=248 guibg=Grey
+ endif
 
 " This ensures that the indentation for Python is consistent.
-augroup indentation_python
-	autocmd!
-	autocmd Filetype python setlocal shiftwidth=4 softtabstop=4 tabstop=4
+" augroup indentation_python
+"	autocmd!
+"	autocmd Filetype python setlocal shiftwidth=4 softtabstop=4 tabstop=8
+" augroup END
+
+augroup indentation_sr
+  autocmd!
+  autocmd Filetype * setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=8
+  autocmd Filetype python setlocal shiftwidth=4 softtabstop=4 tabstop=8
+  autocmd Filetype yaml setlocal indentkeys-=<:>
 augroup END
 
 " PLUGINS PLUGINS PLUGINS
@@ -41,6 +49,8 @@ Plug 'godlygeek/tabular' " Markdown plugin
 Plug 'plasticboy/vim-markdown' " Markdown plugin
 Plug 'junegunn/goyo.vim' " Distraction-free writing
 Plug 'junegunn/seoul256.vim' " Seoul color scheme
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -85,4 +95,3 @@ augroup javascript_folding
     au!
     au FileType javascript setlocal foldmethod=syntax
 augroup END
-

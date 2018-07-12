@@ -87,6 +87,7 @@ alias l='ls -CF'
 alias ,='cd ..'
 alias n='nvim'
 alias p='python3'
+alias node='nodejs'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -229,6 +230,20 @@ then
   export PYENV_ROOT
   PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
+fi
+
+NODENV_ROOT="$HOME/.nodenv"
+if [ -d "$NODENV_ROOT" ]
+then
+  export NODENV_ROOT
+  # Make sure it's not already in path
+  if [[ ":$PATH:" != *":$NODENV_ROOT/bin:"* ]]
+  then
+    # If $PATH exists, then add $NODENV_ROOT to $PATH with : at the end;
+    # otherwise NODENV_ROOT is the $PATH
+    PATH="${PATH:+"$PATH:"}$NODENV_ROOT/bin"
+    eval "$(nodenv init -)"
+  fi
 fi
 
 # Make sure you're also exporting PATH somewhere...
