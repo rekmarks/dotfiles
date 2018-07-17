@@ -102,10 +102,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+
 if [ -f ~/.bash/sensitive ]; then
     . ~/.bash/sensitive
 fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -195,13 +195,13 @@ function git_branch {
 }
 
 # Set Bash PS1
-PS1_DIR="\n\[$BOLD\]\[$COLOR_LIGHT_ORANGE\]\w"
-PS1_GIT="\[\$(git_color)\]\[$BOLD\]\$(git_branch)\[$BOLD\]\[$COLOR_RESET\]"
-PS1_USR="\[$BOLD\]\[$COLOR_LIGHT_BLUE\]\u@\h"
-PS1_END="\[$BOLD\]\[$COLOR_LIGHT_BLUE\]\n\n ¯\_(ツ)_/¯ \[$COLOR_RESET\]"
+PS1_DIR="\[$BOLD\]\[$COLOR_LIGHT_ORANGE\]\w "
+PS1_GIT="\[$BOLD\]\[\$(git_color)\]\[$BOLD\]\$(git_branch)\[$COLOR_RESET\]"
+PS1_USR="\n\[$BOLD\]\[$COLOR_LIGHT_BLUE\]\u"
+PS1_END="\[$BOLD\]\[$COLOR_LIGHT_BLUE\]\n\n¯\_(ツ)_/¯ \[$COLOR_RESET\]"
 
-PS1="${PS1_DIR} ${PS1_GIT}\
-${PS1_USR} ${PS1_END}"
+PS1="${PS1_USR} ${PS1_DIR}\
+${PS1_GIT} ${PS1_END}"
 
 
 GREEN=`echo -e '\033[92m'`
