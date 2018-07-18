@@ -169,10 +169,10 @@ function git_color {
   if [[ $git_status == "" ]]; then
     echo -e $COLOR_SILVER
   elif [[ ! $git_status =~ "working directory clean" ]]; then
-    echo -e $COLOR_LIGHT_RED
+    echo -e $COLOR_RED
   elif [[ $git_status =~ "Your branch is ahead of" ]]; then
     echo -e $COLOR_YELLOW
-  elif [[ $git_status =~ "nothing to commit" ]] && \
+  elif [[ $git_status =~ "nothing to commit, working tree clean" ]] && \
       [[ ! -n $git_commit ]]; then
     echo -e $COLOR_LIGHT_GREEN
   else
@@ -199,6 +199,12 @@ PS1_DIR="\n\[$BOLD\]\[$COLOR_LIGHT_ORANGE\]\w"
 PS1_GIT="\[\$(git_color)\]\[$BOLD\]\$(git_branch)\[$BOLD\]\[$COLOR_RESET\]"
 PS1_USR="\[$BOLD\]\[$COLOR_LIGHT_BLUE\]\u@\h"
 PS1_END="\[$BOLD\]\[$COLOR_LIGHT_BLUE\]\n\n ¯\_(ツ)_/¯ \[$COLOR_RESET\]"
+
+# autocompletion for git branches, show git branch, etc.
+# source /usr/local/git/contrib/completion/git-completion.bash
+# GIT_PS1_SHOWDIRTYSTATE=true
+# PS1_GIT="[$(__git_ps1)] \$"
+
 
 PS1="${PS1_DIR} ${PS1_GIT}\
 ${PS1_USR} ${PS1_END}"
@@ -249,6 +255,16 @@ then
     eval "$(nodenv init -)"
   fi
 fi
+
+# Enabling global terminal colors on macosx
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+# git colors on macosx
+# git config --global color.ui true
+
+# bash completion?
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # Make sure you're also exporting PATH somewhere...
 export PATH
