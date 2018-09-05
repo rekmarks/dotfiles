@@ -88,6 +88,10 @@ alias ,='cd ..'
 alias n='nvim'
 alias p='python3'
 alias node='nodejs'
+alias ga='git add .'
+alias gp='git push'
+alias gs='git status'
+alias gd='git diff'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -258,4 +262,6 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # Make sure you're also exporting PATH somewhere...
-export PATH
+# export PATH
+export PATH=~/.local/bin:$PATH
+
