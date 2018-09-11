@@ -88,6 +88,7 @@ alias ,='cd ..'
 alias n='nvim'
 alias p='python3'
 alias node='nodejs'
+alias c='clear'
 
 alias ga='git add .'
 alias gp='git push'
@@ -95,6 +96,7 @@ alias gs='git status'
 alias gd='git diff'
 alias gc='git commit -m'
 alias gpu='git pull'
+alias gb='git branch'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
