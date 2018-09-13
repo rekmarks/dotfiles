@@ -65,6 +65,10 @@ nnoremap <A-Right> :tabnext<CR>
 " Set up TAB to move between tabs
 noremap <TAB> <C-W>w
 
+" easy copy paste
+noremap ç "+y
+noremap √ "+p
+
 " Python: Highlight self and cls keyword in class definitions
 augroup python_syntax
   autocmd!
