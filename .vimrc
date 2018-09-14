@@ -1,6 +1,6 @@
-" set tabstop=2 "tab length
-" set softtabstop=2 "tab length
-" set shiftwidth=2 "shift length
+set tabstop=2 "tab length
+set softtabstop=2 "tab length
+set shiftwidth=2 "shift length
 set showtabline=2 "show tab dif
 set expandtab "spaces are tabs
 set number "line numbers
@@ -44,13 +44,15 @@ Plug 'hdima/python-syntax' " Python syntax
 Plug 'PyCQA/pyflakes' " Python testing
 Plug 'scrooloose/syntastic' " Python code checker?
 Plug 'Townk/vim-autoclose' " Autoclose brackets, etc.
-Plug 'pangloss/vim-javascript' " Vim JS
 Plug 'godlygeek/tabular' " Markdown plugin
 Plug 'plasticboy/vim-markdown' " Markdown plugin
 Plug 'junegunn/goyo.vim' " Distraction-free writing
 Plug 'junegunn/seoul256.vim' " Seoul color scheme
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'Yggdroot/indentLine'
+Plug 'pangloss/vim-javascript' " JavaScript syntax
+Plug 'elzr/vim-json' " JSON syntax
+Plug 'mxw/vim-jsx' " JSX syntax
 
 call plug#end()
 
