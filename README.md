@@ -1,2 +1,11 @@
-# 🛠  dotfiles
-Quick repo of my current bash + vim settings, more to be added shortly (hopefully)
+# 🛠 dotfiles
+current bash and vim settings
+
+## recovery notes
+- for nvim plugin manager, run:
+  - `curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+- `copy the content of `.vimrc` into `~/.config/nvim/init.vim` and run:
+  - `ln -s ~/.config/nvim/init.vim ~/.vimrc
+- `for `pyenv`, run `xcode-select --install `before installing using `homebrew
+

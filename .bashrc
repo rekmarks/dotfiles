@@ -1,6 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
 
 # If not running interactively, don't do anything
 case $- in
@@ -27,10 +24,6 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -138,34 +131,25 @@ alias pbpaste="xsel --clipboard --output"
 # upgrade
 alias upgrade="sudo apt-get update && sudo apt-get upgrade"
 
-# get the weather
-weather() { # arg1: optional <location>
-	if [ $# -eq 0 ]; then
-		curl wttr.in/new_york
-	else
-		curl wttr.in/$1
-	fi
-}
-
 # reload bashrc
 so() {
   source ~/.bashrc
 }
 
-COLOR_BRIGHT_GREEN="\033[38;5;10m"
-COLOR_LIGHT_GREEN="\033[38;5;154m"
-COLOR_BRIGHT_BLUE="\033[38;5;115m"
-COLOR_LIGHT_BLUE="\033[38;5;86m"
-COLOR_LIGHT_RED="\033[38;5;196m"
-COLOR_YELLOW="\033[0;33m"
-COLOR_PURPLE="\033[1;35m"
-COLOR_LIGHT_ORANGE="\033[38;5;215m"
-COLOR_BLUE="\033[34;5;115m"
-COLOR_LIGHT_CYAN="\033[1;36m"
-COLOR_WHITE="\033[0;37m"
-COLOR_GOLD="\033[38;5;142m"
-COLOR_SILVER="\033[38;5;248m"
+# COLOR_BRIGHT_GREEN="\033[38;5;10m"
+# COLOR_LIGHT_GREEN="\033[38;5;154m"
+# COLOR_BRIGHT_BLUE="\033[38;5;115m"
+# COLOR_LIGHT_BLUE="\033[38;5;86m"
+# COLOR_LIGHT_RED="\033[38;5;196m"
+# COLOR_YELLOW="\033[0;33m"
+# COLOR_PURPLE="\033[1;35m"
+# COLOR_BLUE="\033[34;5;115m"
+# COLOR_LIGHT_CYAN="\033[1;36m"
+# COLOR_GOLD="\033[38;5;142m"
+# COLOR_SILVER="\033[38;5;248m"
 COLOR_RESET="\033[0m"
+COLOR_LIGHT_ORANGE="\033[38;5;215m"
+COLOR_WHITE="\033[0;37m"
 
 BOLD="$(tput bold)"
 
@@ -201,39 +185,19 @@ git_branch() {
 echo -e $gitver
 }
 
-## Set Bash PS1
+# Set Bash PS1
 PS1_DIR="\[$BOLD\]\[$COLOR_LIGHT_ORANGE\]\w "
 PS1_GIT="\[$BOLD\]\[\$(branch_color)\]\[$BOLD\]\$(git_branch)\[$COLOR_RESET\]"
-PS1_USR="\n\[$BOLD\]\[$COLOR_LIGHT_BLUE\]\u"
-PS1_END="\[$BOLD\]\[$COLOR_LIGHT_BLUE\]\n\n¯\_(ツ)_/¯ \[$COLOR_RESET\]"
+PS1_USR="\n\[$BOLD\]\[$COLOR_WHITE\]\u"
+PS1_END="\[$BOLD\]\[$COLOR_WHITE\]\n\n ●○● \[$COLOR_RESET\]"
 
 PS1="${PS1_USR} ${PS1_DIR}\
 ${PS1_GIT} ${PS1_END}"
 
-GREEN=`echo -e '\033[92m'`
-RED=`echo -e '\033[91m'`
-CYAN=`echo -e '\033[96m'`
-BLUE=`echo -e '\033[94m'`
-YELLOW=`echo -e '\033[93m'`
-PURPLE=`echo -e '\033[95m'`
-RESET=`echo -e '\033[0m'`
-
-load_failed="s/^Failed, modules loaded:/$RED&$RESET/;"
-load_done="s/done./$GREEN&$RESET/g;"
-double_colon="s/::/$PURPLE&$RESET/g;"
-right_arrow="s/\->/$PURPLE&$RESET/g;"
-right_arrow2="s/=>/$PURPLE&$RESET/g;"
-calc_operators="s/[+\-\/*]/$PURPLE&$RESET/g;"
-string="s/\"[^\"]*\"/$RED&$RESET/g;"
-parenthesis="s/[{}()]/$BLUE&$RESET/g;"
-left_blacket="s/\[\([^09]\)/$BLUE[$RESET\1/g;"
-right_blacket="s/\]/$BLUE&$RESET/g;"
-no_instance="s/^\s*No instance/$RED&$RESET/g;"
-interactive="s/^<[^>]*>/$RED&$RESET/g;"
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-#PYENV installation
+# PYENV installation
+# https://github.com/pyenv/pyenv/wiki
 PYENV_ROOT="$HOME/.pyenv"
 if [ -d "$PYENV_ROOT" ]
 then
@@ -242,31 +206,29 @@ then
   eval "$(pyenv init -)"
 fi
 
-NODENV_ROOT="$HOME/.nodenv"
-if [ -d "$NODENV_ROOT" ]
-then
-  export NODENV_ROOT
-  # Make sure it's not already in path
-  if [[ ":$PATH:" != *":$NODENV_ROOT/bin:"* ]]
-  then
-    # If $PATH exists, then add $NODENV_ROOT to $PATH with : at the end;
-    # otherwise NODENV_ROOT is the $PATH
-    PATH="${PATH:+"$PATH:"}$NODENV_ROOT/bin"
-    eval "$(nodenv init -)"
-  fi
-fi
+# python aliases
+alias py='python'
+alias py3='python3'
+
+# Setting PATH for Sublime Text's subl command
+export PATH=/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export EDITOR='subl -w'
+
+# Setting GOPATH for Golang
+export GOPATH=$HOME/workspaces/go
+export GOBIN=$HOME/workspaces/go/bin
+
+# TODO
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Enabling global terminal colors on macosx
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-# git colors on macosx
-# git config --global color.ui true
-
 # bash completion?
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-# Make sure you're also exporting PATH somewhere...
 # export PATH
 export PATH=~/.local/bin:$PATH
-
