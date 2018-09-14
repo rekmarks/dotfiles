@@ -53,10 +53,12 @@ Plug 'Yggdroot/indentLine'
 Plug 'pangloss/vim-javascript' " JavaScript syntax
 Plug 'elzr/vim-json' " JSON syntax
 Plug 'mxw/vim-jsx' " JSX syntax
+Plug 'moll/vim-node' " Node plugin
+Plug 'heavenshell/vim-jsdoc' " JSDoc generation
 
 call plug#end()
 
-"Python: highlighting
+" Python: highlighting
 let g:python_highlight_space_errors = 0
 let g:python_highlight_all = 1
 
@@ -93,9 +95,11 @@ try
 catch
 endtry
 
+" JavaScript:
 let g:javascript_plugin_jsdoc = 1
 let g:javascript_plugin_ngdoc = 1
 let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 augroup javascript_folding
     au!
