@@ -1,4 +1,3 @@
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -188,13 +187,16 @@ echo -e $gitver
 # Set Bash PS1
 PS1_DIR="\[$BOLD\]\[$COLOR_LIGHT_ORANGE\]\w "
 PS1_GIT="\[$BOLD\]\[\$(branch_color)\]\[$BOLD\]\$(git_branch)\[$COLOR_RESET\]"
-PS1_USR="\n\[$BOLD\]\[$COLOR_WHITE\]\u"
-PS1_END="\[$BOLD\]\[$COLOR_WHITE\]\n\n ●○● \[$COLOR_RESET\]"
+# PS1_USR="\n\[$BOLD\]\[$COLOR_WHITE\]\u"
+PS1_SYM="\[$BOLD\]\[$COLOR_WHITE\]●○●\[$COLOR_RESET\]"
 
-PS1="${PS1_USR} ${PS1_DIR}\
-${PS1_GIT} ${PS1_END}"
+PS1="${PS1_DIR}${PS1_GIT} ${PS1_SYM}\n "
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Setting PATH for Sublime Text's subl command
+PATH="/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$PATH"
+export EDITOR='subl -w'
 
 # PYENV installation
 # https://github.com/pyenv/pyenv/wiki
@@ -202,17 +204,14 @@ PYENV_ROOT="$HOME/.pyenv"
 if [ -d "$PYENV_ROOT" ]
 then
   export PYENV_ROOT
-  PATH="$PYENV_ROOT/bin:$PATH"
+  PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
 fi
 
 # python aliases
-alias py='python'
-alias py3='python3'
-
-# Setting PATH for Sublime Text's subl command
-export PATH=/bin:/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:$PATH
-export EDITOR='subl -w'
+alias py='python3'
+alias py2='python'
 
 # Setting GOPATH for Golang
 export GOPATH=$HOME/workspaces/go
@@ -231,4 +230,4 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # export PATH
-export PATH=~/.local/bin:$PATH
+export PATH="~/.local/bin:$PATH"
