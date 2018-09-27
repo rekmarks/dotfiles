@@ -1,3 +1,7 @@
+
+" Migration command for neovim
+" cp .vimrc ~/config/nvim/init.vim
+
 set tabstop=2 "tab length
 set softtabstop=2 "tab length
 set shiftwidth=2 "shift length
@@ -71,26 +75,33 @@ call plug#end()
 let g:deoplete#enable_at_startup=1
 set completeopt+=noinsert
 
+"vim-jsdoc
+let g:jsdoc_allow_input_prompt=1
+let g:jsdoc_enable_es6=1
+
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<C-E>"
 let g:UltiSnipsJumpForwardTrigger="<C-b>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 " KEY BINDINGS
-" Set up Alt+Left and Alt+Right to move between tabs
-nnoremap <A-Left> :tabprevious<CR>
-nnoremap <A-Right> :tabnext<CR>
-
-" Set up TAB to move between tabs
-noremap <TAB> <C-W>
+" Switching between tabs
+nnoremap † :tabnext<CR>
+nnoremap ® :tabprevious<CR>
 
 " easy copy paste
-noremap ç "+y
-noremap √ "+p
+nnoremap ç "+y
+nnoremap √ "+p
 
 " autocompletion popup navigation
 inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr> <C-r> pumvisible() ? "\<C-p>" : "\<C-r>"
+
+" hjkl navigation during insertion
+inoremap <C-h> <C-o>h
+inoremap <C-j> <C-o>j
+inoremap <C-k> <C-o>k
+inoremap <C-l> <C-o>l
 
 " Python: highlighting
 let g:python_highlight_space_errors = 0
