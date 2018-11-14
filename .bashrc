@@ -79,7 +79,6 @@ alias l='ls -CF'
 alias ,='cd ..'
 alias n='nvim'
 alias p='python3'
-alias node='nodejs'
 alias c='clear'
 
 alias ga='git add .'
@@ -228,6 +227,9 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # bash completion?
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+# rust
+PATH="$HOME/.cargo/bin:$PATH"
 
 # export PATH
 export PATH="~/.local/bin:$PATH"

@@ -1,5 +1,6 @@
 
 # neovim
 cp ./.vimrc ~/.config/nvim/init.vim
+cp ./.bashrc ~
 
-echo "migration successful"
+echo "migration complete"
