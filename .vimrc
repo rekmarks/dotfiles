@@ -67,7 +67,7 @@ else
 endif
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'tomlion/vim-solidity'
+Plug 'tomlion/vim-solidity' " Solidity syntax
 
 call plug#end()
 

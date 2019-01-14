@@ -1,8 +1,12 @@
 # 🛠 dotfiles
 current bash and vim settings
 
+## usage notes
+- for reloading .vimrc without restarting vim
+  - `:so ~/.vimrc`
+
 ## recovery notes
-- for nvim plugin manager, run:
+- for nvim plugin manager, `junegunn/vim-plug`, run:
   - `curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 - `copy the content of `.vimrc` into `~/.config/nvim/init.vim` and run:
