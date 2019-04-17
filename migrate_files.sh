@@ -1,3 +1,4 @@
+#! /bin/sh
 
 # neovim
 cp ./.vimrc ~/.config/nvim/init.vim

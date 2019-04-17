@@ -220,10 +220,10 @@ alias py2='python'
 export GOPATH=$HOME/workspaces/go
 export GOBIN=$HOME/workspaces/go/bin
 
-# TODO
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Enabling global terminal colors on macosx
 export CLICOLOR=1
@@ -234,6 +234,9 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 
 # rust
 PATH="$HOME/.cargo/bin:$PATH"
+
+# libsodium
+SODIUM_LIB_DIR=/usr/local/lib
 
 # export PATH
 export PATH="~/.local/bin:$PATH"
