@@ -48,7 +48,6 @@ Plug 'PyCQA/pyflakes' " Python testing
 Plug 'scrooloose/syntastic' " Python code checker?
 Plug 'Townk/vim-autoclose' " Autoclose brackets, etc.
 Plug 'godlygeek/tabular' " Markdown plugin
-Plug 'plasticboy/vim-markdown' " Markdown plugin
 Plug 'junegunn/goyo.vim' " Distraction-free writing
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'Yggdroot/indentLine'

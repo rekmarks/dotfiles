@@ -235,7 +235,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 # rust
 PATH="$HOME/.cargo/bin:$PATH"
 
-# libsodium
+# libsodium (Hyperledger Ursa build environment)
 SODIUM_LIB_DIR=/usr/local/lib
 
 # export PATH
