@@ -12,5 +12,5 @@ current bash and vim settings
   - `ln -s ~/.config/nvim/init.vim ~/.vimrc`
   - this creates a symbolic link named `.vimrc` in the home directory
 - for `pyenv`, run `xcode-select --install` before installing using `homebrew`
-- for migration scripts, run: `chmod +x migrate_files.sh && ./migrate_files.sh`
+- to migrate files, run: `chmod +x migrate_files.sh && ./migrate_files.sh`
 
