@@ -36,6 +36,10 @@ current bash and vim settings
   - `git`
     - `brew install git`
     - `brew link --force git`
+- finally
+  - In a running instance of `nvim`
+    - `:PlugInstall`
+    - `:so ~/.vimrc`
 
 ## packages used
 - [Homebrew](https://brew.sh)
