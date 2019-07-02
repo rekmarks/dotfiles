@@ -6,6 +6,8 @@ current bash and vim settings
   - `source ~/.bash_profile`
 - for reloading `.vimrc` without restarting vim
   - `:so ~/.vimrc`
+- to migrate dotfiles
+  - `chmod +x migrate_files.sh && ./migrate_files.sh`
 
 ## recovery
 - first:
@@ -26,7 +28,7 @@ current bash and vim settings
     - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash`
   - `pyenv`
     - `brew install pyenv`
-  - to migrate dotfiles: `chmod +x migrate_files.sh && ./migrate_files.sh`
+  - `chmod +x migrate_files.sh && ./migrate_files.sh`
     - macOS doesn't recognize `.bashrc`, so this script copies over a dummy
     `.bash_profile` file, among other things
   - `ln -s ~/.config/nvim/init.vim ~/.vimrc`
