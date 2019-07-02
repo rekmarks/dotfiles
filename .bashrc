@@ -239,4 +239,4 @@ PATH="$HOME/.cargo/bin:$PATH"
 SODIUM_LIB_DIR=/usr/local/lib
 
 # export PATH
-export PATH="~/.local/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
