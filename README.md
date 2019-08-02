@@ -26,8 +26,6 @@ current bash and vim settings
   - `nvm`
     - `mkdir ~/.nvm/`
     - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash`
-  - `pyenv`
-    - `brew install pyenv`
   - `chmod +x migrate_files.sh && ./migrate_files.sh`
     - macOS doesn't recognize `.bashrc`, so this script copies over a dummy
     `.bash_profile` file, among other things
@@ -40,6 +38,11 @@ current bash and vim settings
   - In a running instance of `nvim`
     - `:PlugInstall`
     - `:so ~/.vimrc`
+  - Remaining packages
+    - `brew install pyenv`
+      - `pyenv install ...` desired versions
+      - `brew install pyenv-virtualenv`
+    - `brew install yarn`
 
 ## packages used
 - [Homebrew](https://brew.sh)
