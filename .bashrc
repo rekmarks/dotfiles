@@ -162,11 +162,9 @@ COLOR_GREEN=`tput setaf 2`
 c_sgr0=`tput sgr0`
 
 branch_color() {
-    if git rev-parse --git-dir >/dev/null 2>&1
-    then
+    if git rev-parse --git-dir >/dev/null 2>&1; then
         color=""
-        if git diff --quiet 2>/dev/null >&2
-        then
+        if git diff --quiet 2>/dev/null >&2; then
             color=${COLOR_GREEN}
         else
             color=${COLOR_RED}
@@ -178,14 +176,28 @@ branch_color() {
 }
 
 git_branch() {
-    if git rev-parse --git-dir >/dev/null 2>&1
-    then
+    if git rev-parse --git-dir >/dev/null 2>&1; then
         gitver="["$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')"]"
     else
         return 0
     fi
-echo -e $gitver
+    echo -e $gitver
 }
+
+######################
+## CUSTOM FUNCTIONS ##
+######################
+
+# list symlinks in directory
+lss() {
+    local dir="."
+    if [ ! -z "$1" ]; then
+        dir=$1
+    fi
+    find $dir -maxdepth 1 -type l -ls
+}
+
+######################
 
 # Set Bash PS1
 PS1_DIR="\[$BOLD\]\[$COLOR_LIGHT_ORANGE\]\w "
