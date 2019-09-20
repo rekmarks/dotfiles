@@ -43,6 +43,10 @@ current bash and vim settings
       - `pyenv install ...` desired versions
       - `brew install pyenv-virtualenv`
     - `brew install yarn`
+  - GPG signing
+    - Download: https://gpgtools.org/
+    - If you were smart and saved your GPG key, you can reuse it
+    - Whatever the case, follow instructions on: https://help.github.com/en/articles/managing-commit-signature-verification
 
 ## packages used
 - [Homebrew](https://brew.sh)
