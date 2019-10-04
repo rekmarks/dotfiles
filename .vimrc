@@ -52,7 +52,6 @@ Plug 'junegunn/goyo.vim' " Distraction-free writing
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'Yggdroot/indentLine'
 Plug 'pangloss/vim-javascript' " JavaScript syntax
-Plug 'elzr/vim-json' " JSON syntax
 Plug 'mxw/vim-jsx' " JSX syntax
 Plug 'moll/vim-node' " Node plugin
 Plug 'heavenshell/vim-jsdoc' " JSDoc generation
@@ -67,6 +66,7 @@ endif
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tomlion/vim-solidity' " Solidity syntax
+Plug 'elzr/vim-json' " JSON syntax
 
 call plug#end()
 
@@ -83,6 +83,9 @@ let g:jsdoc_enable_es6=1
 let g:UltiSnipsExpandTrigger="<C-E>"
 let g:UltiSnipsJumpForwardTrigger="<C-b>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+
+" vim-json
+let g:vim_json_syntax_conceal = 0
 
 " KEY BINDINGS
 " Switching between tabs
