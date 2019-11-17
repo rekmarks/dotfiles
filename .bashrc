@@ -250,5 +250,8 @@ PATH="$HOME/.cargo/bin:$PATH"
 # libsodium (Hyperledger Ursa build environment)
 SODIUM_LIB_DIR=/usr/local/lib
 
+# macOS bash deprecation warning
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # export PATH
 export PATH="/usr/local/bin:$PATH"
