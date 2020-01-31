@@ -250,6 +250,13 @@ PATH="$HOME/.cargo/bin:$PATH"
 # libsodium (Hyperledger Ursa build environment)
 SODIUM_LIB_DIR=/usr/local/lib
 
+# android stuff
+export ANDROID_HOME=$HOME/Library/Android/sdk
+PATH=$PATH:$ANDROID_HOME/emulator
+PATH=$PATH:$ANDROID_HOME/tools
+PATH=$PATH:$ANDROID_HOME/tools/bin
+PATH=$PATH:$ANDROID_HOME/platform-tools
+
 # macOS bash deprecation warning
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
