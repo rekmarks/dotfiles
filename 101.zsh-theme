@@ -39,7 +39,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%F{green}"
 # %f reset color
 # %3~ show cwd: represent home as "~", only show three dir levels
 
-PROMPT='%{%B%F{$COLOR_LIGHT_ORANGE}%}%3~ %B%f$(custom_git_prompt_info) %F{COLOR_WHITE}$PROMPT_SYM %f%b
+PROMPT='%B%F{COLOR_WHITE}$PROMPT_SYM %F{$COLOR_LIGHT_ORANGE}%3~ %f$(custom_git_prompt_info) %b
 %F{$COLOR_LIGHT_GRAY}%'
 
 RPROMPT=""
