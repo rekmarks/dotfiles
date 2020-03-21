@@ -135,7 +135,7 @@ export GOBIN=$HOME/workspaces/go/bin
 
 # NVM already loaded by nvm plugin at this point
 autoload -U add-zsh-hook
-load-nvmrc() {
+load_nvmrc() {
   local node_version="$(nvm version)"
   local nvmrc_path="$(nvm_find_nvmrc)"
 
@@ -152,9 +152,7 @@ load-nvmrc() {
     nvm use default
   fi
 }
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
-
+add-zsh-hook chpwd load_nvmrc
 
 ### rust
 
@@ -174,3 +172,6 @@ PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # export PATH
 export PATH="/usr/local/bin:$PATH"
+
+# must call after exporting PATH
+load_nvmrc
