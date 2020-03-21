@@ -1,8 +1,0 @@
-
-# ATTN: god knows what happens if you run this more than once for the same Slack
-# installation.
-# Modify Applications path per local system
-
-cat ./slack_dark_theme.js >> ~/../../Applications/Slack.app/Contents/Resources/app.asar.unpacked/src/static/ssb-interop.js
-echo "slack theme migration completed"
-
