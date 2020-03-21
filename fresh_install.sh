@@ -13,7 +13,6 @@ then
 fi
 
 # run file migration script
-chmod +x migrate_files.sh
 ./migrate_files.sh
 
 # symlink .vimrc from neovim directory
