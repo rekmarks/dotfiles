@@ -23,7 +23,7 @@ setopt HIST_IGNORE_SPACE
 setopt INC_APPEND_HISTORY
 
 #set history size
-export HISTSIZE=10000
+export HISTSIZE=50000
 
 #save history after logout
 export SAVEHIST=10000
@@ -32,7 +32,7 @@ export SAVEHIST=10000
 export HISTFILE=~/.zhistory
 
 # Add timestamp to history
-export HISTTIMEFORMAT="%Y/%m/%d %H:%M:%S "
+export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
 #################################
 ########### OH MY ZSH! ##########
@@ -96,10 +96,6 @@ lss() {
 alias ,='cd ..'
 alias n='nvim'
 alias c='clear'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # set copy/paste helper functions
 # the per1 step removes the final newline from the output
