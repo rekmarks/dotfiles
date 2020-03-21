@@ -15,7 +15,10 @@ current zsh and vim settings
 
 - first:
   - install `homebrew` from [brew.sh](https://brew.sh)
-  - `xcode-select --install` (for `pyenv`)
+  - Oh My ZSH!
+    - `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+  - `pyenv` requirement:
+    - `xcode-select --install`
 - then, attempt automatic reinstall:
   - `./fresh_install.sh`
   - **Note:** install script does not install `pyenv`
