@@ -30,4 +30,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 # nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
+# tmux plugin manager (TPM)
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 echo "install complete"
