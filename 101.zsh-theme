@@ -33,7 +33,7 @@ COLOR_LIGHT_GRAY=255
 
 ### git prompt
 
-# exactly like git_prompt_info, except parse_git_dirty happens before
+# exactly like git_prompt_info, except no git_parse_dirty
 function custom_git_prompt_info () {
   local ref
   if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]; then
