@@ -1,0 +1,14 @@
+{
+  "name": "dotfiles",
+  "version": "2.0.0",
+  "description": "dotfiles",
+  "main": "index.js",
+  "repository": "git@github.com:rekmarks/dotfiles.git",
+  "author": "Erik Marks <rekmarks@protonmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "i": "./fresh_install.sh",
+    "m": "./migrate_files.sh"
+  }
+}
