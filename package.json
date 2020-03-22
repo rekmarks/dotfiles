@@ -8,7 +8,6 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "i": "./fresh_install.sh",
     "m": "./migrate_files.sh"
   }
 }

@@ -12,13 +12,11 @@ then
   mkdir "~/.nvm"
 fi
 
-# run file migration script
-./migrate_files.sh
-
 # symlink .vimrc from neovim directory
 ln -s ~/.config/nvim/init.vim ~/.vimrc
 
 # install homebrew packages
+brew install yarn
 brew install nvim
 brew install tmux
 brew install git
@@ -32,3 +30,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
 # tmux plugin manager (TPM)
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# run file migration script
+./migrate_files.sh
