@@ -6,4 +6,4 @@ cp ./.zshrc ~ # zsh config
 cp ./101.zsh-theme ~/.oh-my-zsh/custom/themes # zsh theme
 cp ./.tmux.conf ~ # tmux
 
-echo "migration complete"
+echo "migration script exit"

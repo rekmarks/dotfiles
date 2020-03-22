@@ -3,15 +3,18 @@
 ##############     ##############
 #################################
 
-### colors etc.
+### misc
 
-COLOR_GREEN=9
-COLOR_RED=10
+# print empty line before prompt
+precmd() { print "" }
+
+### colors
+
+COLOR_RED=9
+COLOR_GREEN=10
 COLOR_WHITE=15
 COLOR_LIGHT_ORANGE=215
 COLOR_LIGHT_GRAY=255
-
-PROMPT_SYM="●○●"
 
 ### git prompt
 
@@ -27,9 +30,8 @@ function custom_git_prompt_info() {
 
 ZSH_THEME_GIT_PROMPT_PREFIX="["
 ZSH_THEME_GIT_PROMPT_SUFFIX="]%f"
-ZSH_THEME_GIT_PROMPT_DIRTY="%F{red}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%F{green}"
-# ZSH_THEME_GIT_PROMPT_ADDED=" ✚"
+ZSH_THEME_GIT_PROMPT_DIRTY="%F{$COLOR_RED}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%F{$COLOR_GREEN}"
 
 ### PROMPT
 
@@ -39,8 +41,18 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%F{green}"
 # %f reset color
 # %3~ show cwd: represent home as "~", only show three dir levels
 
-PROMPT='%B%F{COLOR_WHITE}$PROMPT_SYM %F{$COLOR_LIGHT_ORANGE}%3~ %f$(custom_git_prompt_info) %b
-%F{$COLOR_LIGHT_GRAY}%'
+# components
+PROMPT_SYM="%F{$COLOR_WHITE}●○●"
+
+PROMPT_PWD="%F{$COLOR_LIGHT_ORANGE}%3~"
+
+PROMPT_GIT="$(custom_git_prompt_info)"
+
+PROMPT_EXIT_CODE="%B%(?.%F{$COLOR_GREEN}*.%F{$COLOR_RED}*)%f%b"
+
+# PROMPT
+PROMPT='%B$PROMPT_SYM $PROMPT_PWD %f$PROMPT_GIT $PROMPT_EXIT_CODE%b
+%F{$COLOR_LIGHT_GRAY}'
 
 RPROMPT=""
 
