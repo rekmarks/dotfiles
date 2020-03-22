@@ -77,9 +77,11 @@ get_prompt_left () {
   strip_invisible_pattern='%([BSUbfksu]|([FK]|){*})'
 
   PROMPT_LEFT_VISIBLE_LENGTH=${#${(S%%)PROMPT_LEFT//$~strip_invisible_pattern/}}
-  PROMPT_PAD_SIZE=$(( $COLUMNS - ${PROMPT_LEFT_VISIBLE_LENGTH} - 1 ))
+  PROMPT_RIGHT_VISIBLE_LENGTH=1 # just a single "*" for now
 
-  echo "$PROMPT_LEFT$(get_pad $PROMPT_PAD_SIZE)"
+  PROMPT_PAD_LENGTH=$(( $COLUMNS - ${PROMPT_LEFT_VISIBLE_LENGTH} - ${PROMPT_RIGHT_VISIBLE_LENGTH} ))
+
+  echo "$PROMPT_LEFT$(get_pad $PROMPT_PAD_LENGTH)"
 }
 
 ### PROMPT
