@@ -7,6 +7,8 @@
 
 ## Useful Snippets
 
+For replacements, assumes VS Code.
+
 ```shell
 
 ### URLs
@@ -14,10 +16,15 @@
 # scheme?, host
 ((http|https)?\:\/\/)?[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,}
 
+
 ### JavaScript
 
+# dot notation property require -> destructure property require
+const (\w+) = (require\('[-\w\/\.]+'\))\.(\w+)(;)?
+const { $3: $1 } = $2
+
 # require -> import syntax
-const (\w+|\{ [\w\, ]+ \}) = require\(('[-\w\/\.]+')\)(;)?
+const (\w+|\{ [\w\,: ]+ \}) = require\(('[-\w\/\.]+')\)(;)?
 import $1 from $2$3
 
 # import -> require syntax
