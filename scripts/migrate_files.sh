@@ -4,19 +4,22 @@ migrate_files() {
 
   local return_code=0
 
-  eval_shared_return_code() {
+  # eval with shared return code
+  _eval() {
     eval $1
     if (( $? != 0 )); then
       return_code=1
     fi
   }
 
-  eval_shared_return_code "cp ./dotfiles/.gitconfig ~" # global git config
-  eval_shared_return_code "cp ./dotfiles/.gitignore ~" # global gitignore
-  eval_shared_return_code "cp ./dotfiles/.vimrc ~/.config/nvim/init.vim" # neovim
-  eval_shared_return_code "cp ./dotfiles/.zshrc ~" # zsh config
-  eval_shared_return_code "cp ./dotfiles/.tmux.conf ~" # tmux
-  eval_shared_return_code "cp ./themes/oh-my-zsh/101.zsh-theme ~/.oh-my-zsh/custom/themes" # oh-my-zsh theme
+  _eval "cp ./dotfiles/.gitconfig ~" # global git config
+  _eval "cp ./dotfiles/.gitignore ~" # global gitignore
+  _eval "cp ./dotfiles/.vimrc ~/.config/nvim/init.vim" # neovim
+  _eval "cp ./dotfiles/.zshrc ~" # zsh config
+  _eval "cp ./dotfiles/.tmux.conf ~" # tmux
+  _eval "cp ./themes/oh-my-zsh/101.zsh-theme ~/.oh-my-zsh/custom/themes" # oh-my-zsh theme
+
+  unset -f _eval
 
   return ${return_code}
 }
