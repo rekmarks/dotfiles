@@ -53,9 +53,16 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'Yggdroot/indentLine'
 Plug 'pangloss/vim-javascript' " JavaScript syntax
 Plug 'mxw/vim-jsx' " JSX syntax
+Plug 'ianks/vim-tsx' " .tsx syntax
 Plug 'moll/vim-node' " Node plugin
 Plug 'heavenshell/vim-jsdoc' " JSDoc generation
 Plug 'lifepillar/vim-solarized8' " Solarized color scheme
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'tomlion/vim-solidity' " Solidity syntax
+Plug 'elzr/vim-json' " JSON syntax
+
+" deoplete
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -63,10 +70,7 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'tomlion/vim-solidity' " Solidity syntax
-Plug 'elzr/vim-json' " JSON syntax
+let g:deoplete#enable_at_startup = 1
 
 call plug#end()
 
