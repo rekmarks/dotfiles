@@ -62,22 +62,9 @@ Plug 'honza/vim-snippets'
 Plug 'tomlion/vim-solidity' " Solidity syntax
 Plug 'elzr/vim-json' " JSON syntax
 
-" deoplete
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
-
 call plug#end()
 
 " PLUGIN CONFIGURATION
-" deoplete and autocompletion
-let g:deoplete#enable_at_startup=1
-set completeopt+=noinsert
 
 "vim-jsdoc
 let g:jsdoc_allow_input_prompt=1
