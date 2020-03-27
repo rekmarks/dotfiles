@@ -41,14 +41,14 @@ export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 export ZSH_THEME="101"
 
 plugins=(
-    git # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
-    node # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/node
-    nvm # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm
-    pyenv # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pyenv
-    yarn # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/yarn
-    tmux # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
-    vscode # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode
-    web-search # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
+  git # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+  node # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/node
+  nvm # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm
+  pyenv # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pyenv
+  yarn # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/yarn
+  tmux # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
+  vscode # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode
+  web-search # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -122,6 +122,15 @@ so() {
 ##############  &  ##############
 ########### LANGUAGES ###########
 #################################
+
+### git
+# note that the OMZ git plugin has lots of aliases
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+
+alias gfx='git commit --fixup HEAD'
+
+# gaa = git add --all
+alias gafx='gaa && gfx'
 
 ### python
 
