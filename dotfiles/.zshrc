@@ -132,6 +132,11 @@ alias gfx='git commit --fixup HEAD'
 # gaa = git add --all
 alias gafx='gaa && gfx'
 
+# git commit -am MSG && git push
+gcap () {
+  gcam $1 && gp
+}
+
 ### python
 
 alias py='python3'
