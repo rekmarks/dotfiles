@@ -22,8 +22,11 @@ brew install tmux
 brew install git
 brew link --force git
 
+# python
+./scripts/install/install_python.sh
+
 # junegunn/vim-plug
-./update_vim_plug.sh
+./scripts/install/install_vim_plug.sh
 
 # nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
@@ -32,4 +35,4 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # run file migration script
-./migrate_files.sh
+./scripts/migrate_files.sh

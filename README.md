@@ -14,6 +14,7 @@
 
 - first:
   - install `homebrew` from [brew.sh](https://brew.sh)
+    - `brew install yarn`
   - Oh My ZSH!
     - `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
   - `pyenv` requirement:
@@ -30,7 +31,6 @@
     - `brew install pyenv`
       - `pyenv install ...` desired versions
       - `brew install pyenv-virtualenv`
-    - `brew install yarn`
   - GPG signing
     - [download](https://gpgtools.org/)
     - if you were smart and saved your GPG key, you can reuse it

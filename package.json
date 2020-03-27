@@ -8,6 +8,9 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "m": "./migrate_files.sh"
+    "m": "./scripts/migrate_files.sh",
+    "i": "./scripts/fresh_install.sh",
+    "install:python": "./scripts/install/install_python.sh",
+    "install:vim-plug": "./scripts/install/install_vim_plug.sh"
   }
 }
