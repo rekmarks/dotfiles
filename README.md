@@ -12,29 +12,28 @@
 
 ## recovery
 
-- first:
+- first
   - install `homebrew` from [brew.sh](https://brew.sh)
     - `brew install yarn`
   - Oh My ZSH!
     - `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
   - `pyenv` requirement:
     - `xcode-select --install`
-- then, attempt automatic reinstall:
-  - `./fresh_install.sh`
-  - install script does _not_ install `pyenv`
+- then, attempt automatic reinstall
+  - `yarn i`
   - if the script fails, see contents for manual steps
 - finally
   - In a running instance of `nvim`
     - `:PlugInstall`
     - `:so ~/.vimrc`
-  - remaining packages
-    - `brew install pyenv`
-      - `pyenv install ...` desired versions
-      - `brew install pyenv-virtualenv`
   - GPG signing
     - [download](https://gpgtools.org/)
     - if you were smart and saved your GPG key, you can reuse it
     - whatever the case, follow [these instructions](https://help.github.com/en/articles/managing-commit-signature-verification)
+
+### notes
+
+- Check that the desired versions are listed in `scripts/install/install_python.sh`
 
 ## packages used
 
