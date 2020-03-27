@@ -42,7 +42,6 @@ Plug 'itchyny/lightline.vim' " Status line / tab line plugin for Vim
 Plug 'mhinz/vim-startify' " Fancy start screen
 Plug 'wincent/terminus' " Enhanced terminal integration
 Plug 'henrik/vim-indexed-search' " Indexed search
-" Plug 'davidhalter/jedi-vim' " Autocompletion
 Plug 'hdima/python-syntax' " Python syntax
 Plug 'PyCQA/pyflakes' " Python testing
 Plug 'scrooloose/syntastic' " Python code checker?
