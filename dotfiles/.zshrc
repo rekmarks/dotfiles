@@ -91,7 +91,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # ls alias: list symlinks in directory
-lss() {
+lss () {
     local dir="."
     if [ ! -z "$1" ]; then
         dir=$1
@@ -113,7 +113,7 @@ alias pbpaste="xsel --clipboard --output"
 alias upgrade="sudo apt-get update && sudo apt-get upgrade"
 
 # re-execute zsh to reset source 
-so() {
+so () {
   exec zsh
 }
 
@@ -152,7 +152,7 @@ export GOBIN=$HOME/workspaces/go/bin
 
 # NVM already loaded by nvm plugin at this point
 autoload -U add-zsh-hook
-load_nvmrc() {
+load_nvmrc () {
   local node_version="$(nvm version)"
   local nvmrc_path="$(nvm_find_nvmrc)"
 
