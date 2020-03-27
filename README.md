@@ -2,6 +2,7 @@
 
 ## usage
 
+- platform: **macOS**
 - for reloading `.zshrc` without restarting
   - `so`
   - note that `exit` and restart is recommended
@@ -10,6 +11,11 @@
 - to migrate dotfiles
   - `yarn m`
 
+### TODO
+
+- Disable `pyenv-virtualenv` prompt manipulation; add to OMZ theme
+- `echo` `git` editor command output? (e.g. `git diff`)
+
 ## recovery
 
 - first
@@ -17,15 +23,13 @@
     - `brew install yarn`
   - Oh My ZSH!
     - `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-  - `pyenv` requirement:
-    - `xcode-select --install`
 - then, attempt automatic reinstall
   - `yarn i`
   - if the script fails, see contents for manual steps
 - finally
   - In a running instance of `nvim`
     - `:PlugInstall`
-    - `:so ~/.vimrc`
+    - `:so ~/.vimrc` or restart `nvim`
   - GPG signing
     - [download](https://gpgtools.org/)
     - if you were smart and saved your GPG key, you can reuse it

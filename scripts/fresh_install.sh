@@ -22,6 +22,9 @@ brew install tmux
 brew install git
 brew link --force git
 
+# pyenv requirement
+xcode-select --install
+
 # python
 ./scripts/install/install_python.sh
 
