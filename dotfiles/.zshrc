@@ -132,13 +132,20 @@ alias gfx='git commit --fixup HEAD'
 # gaa = git add --all
 alias gafx='gaa && gfx'
 
+alias gafxp='gafx && gp'
+
 # git log
 alias glg='git log --stat --reverse'
 alias glo='git log --oneline --decorate --reverse'
 
-# git commit -am MSG && git push
+# git commit -am <MSG> && git push
 gcap () {
   gcam $1 && gp
+}
+
+# git push -u <REMOTE> CURRENT_BRANCH
+gpsu () {
+  gp -u $1 $(git_current_branch)
 }
 
 ### python
