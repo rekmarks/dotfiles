@@ -1,5 +1,7 @@
 # 🛠 dotfiles
 
+![Current terminal appearance](./current_terminal.png)
+
 ## usage
 
 - platform: **macOS**
