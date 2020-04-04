@@ -4,13 +4,14 @@
 
 ## usage
 
-- platform: **macOS**
-- for reloading `.zshrc` without restarting
+- Platform
+  - **macOS**
+- For reloading `.zshrc` without restarting
   - `so`
-  - note that `exit` and restart is recommended
-- for reloading `.vimrc` without restarting vim
+  - Note that `exit` and restart is recommended
+- For reloading `.vimrc` without restarting vim
   - `:so ~/.vimrc`
-- to migrate dotfiles
+- To migrate dotfiles
   - `yarn m`
 
 ### TODO
@@ -20,22 +21,22 @@
 
 ## recovery
 
-- first
-  - install `homebrew` from [brew.sh](https://brew.sh)
+- First
+  - Install `homebrew` from [brew.sh](https://brew.sh)
     - `brew install yarn`
   - Oh My ZSH!
     - `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
-- then, attempt automatic reinstall
+- Then, attempt automatic reinstall
   - `yarn i`
-  - if the script fails, see contents for manual steps
-- finally
+  - If the script fails, see contents for manual steps
+- Finally
   - In a running instance of `nvim`
     - `:PlugInstall`
     - `:so ~/.vimrc` or restart `nvim`
   - GPG signing
     - [download](https://gpgtools.org/)
-    - if you were smart and saved your GPG key, you can reuse it
-    - whatever the case, follow [these instructions](https://help.github.com/en/articles/managing-commit-signature-verification)
+    - If you were smart and saved your GPG key, you can reuse it
+    - Whatever the case, follow [these instructions](https://help.github.com/en/articles/managing-commit-signature-verification)
 
 ### notes
 
