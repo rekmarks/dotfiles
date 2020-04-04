@@ -132,6 +132,10 @@ alias gfx='git commit --fixup HEAD'
 # gaa = git add --all
 alias gafx='gaa && gfx'
 
+# git log
+alias glg='git log --stat --reverse'
+alias glo='git log --oneline --decorate --reverse'
+
 # git commit -am MSG && git push
 gcap () {
   gcam $1 && gp
