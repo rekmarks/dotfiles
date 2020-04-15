@@ -54,13 +54,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 #################################
-############# tmux ##############
-#################################
-
-# if we're not in tmux, start tmux
-if [ "$TMUX" = "" ]; then tmux new; fi
-
-#################################
 ############# macOS #############
 #################################
 
@@ -122,6 +115,10 @@ so () {
 ##############  &  ##############
 ########### LANGUAGES ###########
 #################################
+
+### tmux
+
+alias tmx='tmux new'
 
 ### git
 # note that the OMZ git plugin has lots of aliases
