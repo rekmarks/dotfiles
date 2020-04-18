@@ -150,6 +150,8 @@ gpsu () {
 alias py='python3'
 alias py2='python'
 
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
 ### go
 
 # GOPATH
