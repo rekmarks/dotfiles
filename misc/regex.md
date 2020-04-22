@@ -16,6 +16,11 @@ For replacements, assumes VS Code.
 # scheme?, host
 ((http|https)?\:\/\/)?[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,}
 
+### Markdown
+
+# Parenthesized GitHub tag number to PR/Issue link
+\(#(\d+)\)
+([#$1](https://github.com/ORG_OR_USER/REPO_NAME/PULL_OR_ISSUE/$1))
 
 ### JavaScript
 
