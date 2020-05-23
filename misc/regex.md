@@ -33,7 +33,7 @@ const (\w+|\{ [\w\,: ]+ \}) = require\(('[-\w\/\.]+')\)(;)?
 import $1 from $2$3
 
 # import -> require syntax
-import (\w+) from ('[-\w\/\.]+')(;)?
+import ([{\w, }]+) from ('[-\w\/\.]+')(;)?
 const $1 = require($2)$3
 
 # prototype -> Class syntax
