@@ -135,6 +135,12 @@ alias gafxp='gafx && gp'
 alias glg='git log --stat --reverse'
 alias glo='git log --oneline --decorate --reverse'
 
+# git checkout main || master 
+unalias gcm
+gcm () {
+  (git show-ref --verify --quiet refs/heads/main && git checkout main) || git checkout master
+}
+
 # git commit -am <MSG> && git push
 gcap () {
   gcam $1 && gp
