@@ -96,6 +96,7 @@ lss () {
 alias ,='cd ..'
 alias n='nvim'
 alias c='clear'
+alias home="cd ~ && clear"
 
 # set copy/paste helper functions
 # the per1 step removes the final newline from the output
