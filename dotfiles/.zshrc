@@ -134,7 +134,20 @@ alias gafxp='gafx && gp'
 
 # git log
 alias glg='git log --stat --reverse'
-alias glo='git log --oneline --decorate --reverse'
+
+unalias glo
+glo () {
+  local numCommits=20
+  if [[ -n "$1" ]]; then
+    numCommits=$1
+  fi
+
+  if [[ $numCommits -le 0 ]]; then
+    git log --oneline --decorate --reverse
+  else
+    git log --oneline --decorate --reverse -n "${numCommits}"
+  fi
+}
 
 # git checkout main || master 
 unalias gcm
