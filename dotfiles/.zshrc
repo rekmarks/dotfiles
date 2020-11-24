@@ -165,6 +165,12 @@ gpsu () {
   gp -u $1 $(git_current_branch)
 }
 
+# After updating a package, create a version bump branch and push it to the
+# remote. Assumes the local has the version bump changes.
+gpkgupdate () {
+  gcb $1 && gcam $1 && gpsup
+}
+
 ### python
 
 alias py='python3'
