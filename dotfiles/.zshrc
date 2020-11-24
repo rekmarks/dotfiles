@@ -165,10 +165,15 @@ gpsu () {
   gp -u $1 $(git_current_branch)
 }
 
+# Create a new branch and push up an initial commit
+gbpsup () {
+  gcb $1 && gcam $2 && gpsup
+}
+
 # After updating a package, create a version bump branch and push it to the
 # remote. Assumes the local has the version bump changes.
 gpkgupdate () {
-  gcb $1 && gcam $1 && gpsup
+  gpsupb $1 $1
 }
 
 ### python
