@@ -172,7 +172,7 @@ gbpsup () {
 
 # After updating a package, create a version bump branch and push it to the
 # remote. Assumes the local has the version bump changes.
-gpkgupdate () {
+gpbump () {
   gbpsup $1 $1
 }
 
