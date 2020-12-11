@@ -125,6 +125,13 @@ alias tmx='tmux new'
 # note that the OMZ git plugin has lots of aliases
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
 
+# force-with-lease allows e.g. rebases, but prevents overwriting commits by
+# other people 
+unalias gpf
+alias gpf='git push --force-with-lease'
+
+alias gpF='git push --force'
+
 alias gfx='git commit --fixup HEAD'
 
 # gaa = git add --all
