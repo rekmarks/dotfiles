@@ -29,11 +29,11 @@ const (\w+) = (require\('[-\w\/\.]+'\))\.(\w+)(;)?
 const { $3: $1 } = $2
 
 # require -> import syntax
-const (\w+|\{ [\w,: ]+ \}) = require\(('[-\w\/\.]+')\)(;)?
+const (\w+|\{ [\w,: ]+ \}) = require\(('[-\w@\/\.]+')\)(;)?
 import $1 from $2$3
 
 # import -> require syntax
-import ([{\w, }]+) from ('[-\w\/\.]+')(;)?
+import ([{\w, }]+) from ('[-\w@\/\.]+')(;)?
 const $1 = require($2)$3
 
 # prototype -> Class syntax
