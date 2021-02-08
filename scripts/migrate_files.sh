@@ -6,7 +6,7 @@ migrate_files() {
 
   # eval with shared return code
   _eval() {
-    if eval "$1"; then
+    if ! eval "$1"; then
       return_code=1
     fi
   }
