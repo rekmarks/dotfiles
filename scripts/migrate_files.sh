@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
 migrate_files() {
 
@@ -6,8 +6,7 @@ migrate_files() {
 
   # eval with shared return code
   _eval() {
-    eval $1
-    if (( $? != 0 )); then
+    if eval "$1"; then
       return_code=1
     fi
   }
@@ -17,6 +16,7 @@ migrate_files() {
   _eval "cp ./dotfiles/.vimrc ~/.config/nvim/init.vim" # neovim
   _eval "cp ./dotfiles/.zshrc ~" # zsh config
   _eval "cp ./dotfiles/.tmux.conf ~" # tmux
+  _eval "cp ./dotfiles/nvm/default-packages \"$NVM_DIR\"" # nvm default packages
   _eval "cp ./themes/oh-my-zsh/101.zsh-theme ~/.oh-my-zsh/custom/themes" # oh-my-zsh theme
 
   unset -f _eval
