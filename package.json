@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "m": "./scripts/migrate_files.sh",
-    "i": "./scripts/fresh_install.sh",
+    "install:fresh": "./scripts/fresh_install.sh",
     "install:python": "./scripts/install/install_python.sh",
     "install:vim-plug": "./scripts/install/install_vim_plug.sh"
   }

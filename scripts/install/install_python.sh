@@ -1,14 +1,14 @@
 #! /bin/sh
 
 # set these manually
-PYTHON_3_VERSION="3.7.7"
-PYTHON_2_VERSION="2.7.17"
+PYTHON_3_VERSION="3.9.2"
+PYTHON_2_VERSION="2.7.18"
 
 brew install pyenv
 brew install pyenv-virtualenv
 
-pyennv install ${PYTHON_3_VERSION}
-pyennv install ${PYTHON_2_VERSION}
+pyenv install ${PYTHON_3_VERSION}
+pyenv install ${PYTHON_2_VERSION}
 
 rm -rf ~/.pyenv/versions/neovim3
 rm -rf ~/.pyenv/versions/neovim2

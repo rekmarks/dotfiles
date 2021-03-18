@@ -14,11 +14,6 @@
 - To migrate dotfiles
   - `yarn m`
 
-### TODO
-
-- Disable `pyenv-virtualenv` prompt manipulation; add to OMZ theme
-- `echo` `git` editor command output? (e.g. `git diff`)
-
 ## recovery
 
 - First

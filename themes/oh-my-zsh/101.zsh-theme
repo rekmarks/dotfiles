@@ -14,6 +14,7 @@ COLOR_RED=9
 COLOR_GREEN=10
 COLOR_WHITE=15
 COLOR_LIGHT_ORANGE=215
+COLOR_LIGHT_YELLOW=226
 COLOR_LIGHT_GRAY=254
 
 ### static prompt components
@@ -31,6 +32,8 @@ PROMPT_PWD="%F{$COLOR_LIGHT_ORANGE}%3~"
 
 # uses: (<test>.<success>.<failure>)
 PROMPT_EXIT_CODE="%B%(?.%F{$COLOR_GREEN}*.%F{$COLOR_RED}*)%f%b"
+
+PROMPT_TIMESTAMP="%F{$COLOR_WHITE}%*"
 
 # OMZ git prompt variables
 ZSH_THEME_GIT_PROMPT_PREFIX="["
@@ -77,7 +80,7 @@ get_prompt_left () {
   strip_invisible_pattern='%([BSUbfksu]|([FK]|){*})'
 
   PROMPT_LEFT_VISIBLE_LENGTH=${#${(S%%)PROMPT_LEFT//$~strip_invisible_pattern/}}
-  PROMPT_RIGHT_VISIBLE_LENGTH=1 # just a single "*" for now
+  PROMPT_RIGHT_VISIBLE_LENGTH=10 # "* HH:MM:SS"
 
   PROMPT_PAD_LENGTH=$(( $COLUMNS - ${PROMPT_LEFT_VISIBLE_LENGTH} - ${PROMPT_RIGHT_VISIBLE_LENGTH} ))
 
@@ -88,7 +91,7 @@ get_prompt_left () {
 
 # OMZ prints this as the prompt after every command
 # any functions will be called each time
-PROMPT='$(get_prompt_left)$PROMPT_EXIT_CODE%b
+PROMPT='$(get_prompt_left)$PROMPT_EXIT_CODE $PROMPT_TIMESTAMP%b
 %F{$COLOR_LIGHT_GRAY}'
 
 # we don't want the right prompt
