@@ -33,9 +33,11 @@
     - If you were smart and saved your GPG key, you can reuse it
     - Whatever the case, follow [these instructions](https://help.github.com/en/articles/managing-commit-signature-verification)
 
-### notes
+### gotchas
 
-- Check that the desired versions are listed in `scripts/install/install_python.sh`
+- `pyenv`
+  - Check that the desired versions are listed in `scripts/install/install_python.sh`
+  - Sometimes after updating, you have to run `pyenv rehash` to properly update PATH
 
 ## packages used
 
