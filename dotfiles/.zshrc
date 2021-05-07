@@ -79,9 +79,10 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some ls aliases
-alias ll='ls -la'
-alias la='ls -A'
 alias l='ls -CF'
+alias la='ls -A'
+alias lg='ls | grep'
+alias ll='ls -la'
 
 # ls alias: list symlinks in directory
 lss () {
