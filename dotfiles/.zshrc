@@ -168,14 +168,23 @@ gcap () {
   gcam $1 && gp
 }
 
-# git push -u <REMOTE> CURRENT_BRANCH
+# Recall that "gpsup" is:
+# git push -u origin $(git_current_branch)
+
+# git push -u <REMOTE> $(git_current_branch)
 gpsu () {
   gp -u $1 $(git_current_branch)
 }
 
-# Create a new branch and push up an initial commit
+# Add and commit everything and push up the current branch to origin.
+gcapsup () {
+  gaa && gcmsg $1 && gpsup
+}
+
+# Create a new branch, add and commit everything, and push up the new branch to
+# origin.
 gbpsup () {
-  gcb $1 && gcam $2 && gpsup
+  gcb $1 && gcapsup $2
 }
 
 # After updating a package, create a version bump branch and push it to the
