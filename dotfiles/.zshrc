@@ -19,16 +19,21 @@ setopt HIST_IGNORE_DUPS
 # ignore spaces in history
 setopt HIST_IGNORE_SPACE
 
-#append into history file
+# append into history file
 setopt INC_APPEND_HISTORY
 
-#set history size
+# Treat the ‘#’, ‘~’ and ‘^’ characters as part of patterns for filename
+# generation, etc. (An initial unquoted ‘~’ always produces named directory
+# expansion.)
+setopt EXTENDED_GLOB
+
+# set history size
 export HISTSIZE=50000
 
-#save history after logout
+# save history after logout
 export SAVEHIST=10000
 
-#history file
+# history file location
 export HISTFILE=~/.zhistory
 
 # Add timestamp to history

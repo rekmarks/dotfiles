@@ -43,7 +43,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%F{green}"
 
 ### dynamic prompt components
 # anything that's calculated, not just templated, must be calculated each time
-# the prompt renders, i.e., its funciton must be called in the string assigned
+# the prompt renders, i.e., its function must be called in the string assigned
 # to PROMPT
 
 # exactly like OMZ's git_prompt_info, except parse_git_dirty is at the beginning
