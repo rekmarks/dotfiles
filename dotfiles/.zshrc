@@ -168,6 +168,11 @@ gcm () {
   (git show-ref --verify --quiet refs/heads/main && git checkout main) || git checkout master
 }
 
+# gcm && git pull
+gcml () {
+  gcm && gl
+}
+
 # git commit -am <MSG> && git push
 gcap () {
   gcam $1 && gp
