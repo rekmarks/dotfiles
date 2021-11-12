@@ -1,4 +1,3 @@
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -13,13 +12,13 @@ export ZSH=$HOME/.oh-my-zsh
 
 # http://zsh.sourceforge.net/Doc/Release/Options.html
 
-# ignore duplicates in history
+# Ignore duplicates in history
 setopt HIST_IGNORE_DUPS
 
-# ignore spaces in history
+# Ignore spaces in history
 setopt HIST_IGNORE_SPACE
 
-# append into history file
+# Append into history file
 setopt INC_APPEND_HISTORY
 
 # Treat the ‘#’, ‘~’ and ‘^’ characters as part of patterns for filename
@@ -27,13 +26,13 @@ setopt INC_APPEND_HISTORY
 # expansion.)
 setopt EXTENDED_GLOB
 
-# set history size
+# Set history size
 export HISTSIZE=50000
 
-# save history after logout
+# Save history after logout
 export SAVEHIST=10000
 
-# history file location
+# History file location
 export HISTFILE=~/.zhistory
 
 # Add timestamp to history
@@ -62,7 +61,7 @@ source $ZSH/oh-my-zsh.sh
 ############# macOS #############
 #################################
 
-# enable global terminal colors on macOS
+# Enable global terminal colors on macOS
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
@@ -71,7 +70,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 ############ ALIASES ############
 #################################
 
-# enable color support of ls and also add handy aliases
+# Enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -83,9 +82,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some ls aliases
+# Some ls aliases
 alias l='ls -CF'
-alias la='ls -A'
+alias la='ls -A' # Shows all files without metadata
 alias lg='ls | grep'
 alias ll='ls -la'
 
@@ -98,21 +97,21 @@ lss () {
     find $dir -maxdepth 1 -type l -ls
 }
 
-# misc convenience aliases
+# Misc. convenience aliases
 alias ,='cd ..'
 alias n='nvim'
 alias c='clear'
 alias home="cd ~ && clear"
 
-# set copy/paste helper functions
-# the per1 step removes the final newline from the output
+# Set copy/paste helper functions
+# The per1 step removes the final newline from the output
 alias pbcopy="per1 -pe 'chomp if eof' | xsel --clipboard --input"
 alias pbpaste="xsel --clipboard --output"
 
 # upgrade
 alias upgrade="sudo apt-get update && sudo apt-get upgrade"
 
-# re-execute zsh to reset source 
+# Function for re-executing zsh to reset source 
 so () {
   exec zsh
 }
@@ -131,7 +130,7 @@ alias tmx='tmux new'
 # note that the OMZ git plugin has lots of aliases
 # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
 
-# force-with-lease allows e.g. rebases, but prevents overwriting commits by
+# `force-with-lease`` allows e.g. rebases, but prevents overwriting commits by
 # other people 
 unalias gpf
 alias gpf='git push --force-with-lease'
@@ -203,20 +202,20 @@ gpbump () {
   gbpsup $1 $1
 }
 
-### python
+### Python
 
 alias py='python3'
 alias py2='python'
 
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
-### go
+### Go
 
 # GOPATH
 export GOPATH=$HOME/workspaces/go
 export GOBIN=$HOME/workspaces/go/bin
 
-### node
+### Node.js
 
 # NVM already loaded by nvm plugin at this point
 autoload -U add-zsh-hook
@@ -239,11 +238,11 @@ load_nvmrc () {
 }
 add-zsh-hook chpwd load_nvmrc
 
-### rust
+### Rust
 
 PATH="$HOME/.cargo/bin:$PATH"
 
-### android
+### Android
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 PATH=$PATH:$ANDROID_HOME/emulator
@@ -255,8 +254,8 @@ PATH=$PATH:$ANDROID_HOME/platform-tools
 ############## FIN ##############
 #################################
 
-# export PATH
+# Add local binaries to PATH and export it
 export PATH="/usr/local/bin:$PATH"
 
-# must call after exporting PATH
+# This must be called after exporting PATH
 load_nvmrc
