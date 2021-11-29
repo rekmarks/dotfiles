@@ -103,11 +103,6 @@ alias n='nvim'
 alias c='clear'
 alias home="cd ~ && clear"
 
-# Set copy/paste helper functions
-# The per1 step removes the final newline from the output
-alias pbcopy="per1 -pe 'chomp if eof' | xsel --clipboard --input"
-alias pbpaste="xsel --clipboard --output"
-
 # upgrade
 alias upgrade="sudo apt-get update && sudo apt-get upgrade"
 
@@ -176,6 +171,11 @@ gcml () {
 gcap () {
   gcam $1 && gp
 }
+
+alias ghr="git rev-parse --short HEAD"
+
+# Copy the HEAD shorthash, without a trailing newline
+alias ghrcp="ghr | tr -d '\n' | pbcopy"
 
 # Recall that "gpsup" is:
 # git push -u origin $(git_current_branch)
