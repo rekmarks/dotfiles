@@ -177,6 +177,11 @@ alias ghr="git rev-parse --short HEAD"
 # Copy the HEAD shorthash, without a trailing newline
 alias ghrcp="ghr | tr -d '\n' | pbcopy"
 
+# Copy the fork point with the given base branch, without a trailing newline
+gfp () {
+  git merge-base --fork-point $1 | tr -d '\n' | pbcopy
+}
+
 # Recall that "gpsup" is:
 # git push -u origin $(git_current_branch)
 
