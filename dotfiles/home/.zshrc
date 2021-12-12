@@ -55,6 +55,8 @@ plugins=(
   web-search # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
 )
 
+ZSH_PYENV_QUIET=true
+
 source $ZSH/oh-my-zsh.sh
 
 #################################
@@ -213,9 +215,6 @@ alias py='python3'
 alias py2='python'
 
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-
-# Must run this to initialize pyenv
-eval "$(pyenv init -)"
 
 ### Go
 
