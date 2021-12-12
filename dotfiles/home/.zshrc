@@ -214,6 +214,9 @@ alias py2='python'
 
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
+# Must run this to initialize pyenv
+eval "$(pyenv init -)"
+
 ### Go
 
 # GOPATH
