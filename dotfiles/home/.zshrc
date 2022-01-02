@@ -42,6 +42,10 @@ export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 ########### OH MY ZSH! ##########
 #################################
 
+# This is part of the theme config
+export NEW_LINE_BEFORE_PROMPT=-1
+alias clear="NEW_LINE_BEFORE_PROMPT=-1 && clear"
+
 export ZSH_THEME="101"
 
 plugins=(
