@@ -1,4 +1,3 @@
-
 " Migration command for neovim
 " cp .vimrc ~/config/nvim/init.vim
 
@@ -21,12 +20,7 @@ set nobackup "avoid swap files
   highlight CursorColumn ctermbg=248 guibg=Grey
  endif
 
-" This ensures that the indentation for Python is consistent.
-" augroup indentation_python
-"	autocmd!
-"	autocmd Filetype python setlocal shiftwidth=4 softtabstop=4 tabstop=8
-" augroup END
-
+" Ensure consistent indentation for various file types
 augroup indentation_sr
   autocmd!
   autocmd Filetype * setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=8
@@ -39,12 +33,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'bronson/vim-trailing-whitespace' " Trailing whitespace
 Plug 'itchyny/lightline.vim' " Status line / tab line plugin for Vim
-Plug 'mhinz/vim-startify' " Fancy start screen
 Plug 'wincent/terminus' " Enhanced terminal integration
 Plug 'henrik/vim-indexed-search' " Indexed search
 Plug 'hdima/python-syntax' " Python syntax
-Plug 'PyCQA/pyflakes' " Python testing
-Plug 'scrooloose/syntastic' " Python code checker?
 Plug 'Townk/vim-autoclose' " Autoclose brackets, etc.
 Plug 'godlygeek/tabular' " Markdown plugin
 Plug 'junegunn/goyo.vim' " Distraction-free writing
@@ -52,14 +43,11 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'Yggdroot/indentLine'
 Plug 'pangloss/vim-javascript' " JavaScript syntax
 Plug 'mxw/vim-jsx' " JSX syntax
+Plug 'elzr/vim-json' " JSON syntax
 Plug 'ianks/vim-tsx' " .tsx syntax
 Plug 'moll/vim-node' " Node plugin
-Plug 'heavenshell/vim-jsdoc' " JSDoc generation
 Plug 'lifepillar/vim-solarized8' " Solarized color scheme
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'tomlion/vim-solidity' " Solidity syntax
-Plug 'elzr/vim-json' " JSON syntax
 
 call plug#end()
 
@@ -69,13 +57,8 @@ call plug#end()
 let g:jsdoc_allow_input_prompt=1
 let g:jsdoc_enable_es6=1
 
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<C-E>"
-let g:UltiSnipsJumpForwardTrigger="<C-b>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
-
 " vim-json
-let g:vim_json_syntax_conceal = 0
+let g:vim_json_syntax_conceal=0
 
 " KEY BINDINGS
 " Switching between tabs
@@ -100,17 +83,6 @@ inoremap <C-l> <C-o>l
 let g:python_highlight_space_errors = 0
 let g:python_highlight_all = 1
 
-" Python: add python to Neovim
-let g:python3_host_prog='/Users/rekmarks/.pyenv/versions/neovim3/bin/python'
-let g:python_host_prog='/Users/rekmarks/.pyenv/versions/neovim2/bin/python'
-
-" Python: Highlight self and cls keyword in class definitions
-augroup python_syntax
-  autocmd!
-  autocmd FileType python syn keyword pythonBuiltinObj self
-  autocmd FileType python syn keyword pythonBuiltinObj cls
-augroup end
-
 " Syntax: select global syntax scheme
 " Make sure this is at end of section
 try
@@ -119,12 +91,6 @@ try
   colorscheme solarized8
 catch
 endtry
-
-" JavaScript:
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
-let g:javascript_plugin_flow = 1
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 
 augroup javascript_folding
     au!
