@@ -9,14 +9,11 @@ mkdir -p ~/.nvm
 # symlink .vimrc from neovim directory
 ln -s ~/.config/nvim/init.vim ~/.vimrc
 
-# install homebrew packages
-brew install nvim
-brew install tmux
-brew install git
-brew link --force git
+# omz
+curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 
-# pyenv requirement
-xcode-select --install
+# install required packages
+sudo pacman -Syu gpg nvim tmux git
 
 # python
 ./scripts/install/install_python.sh
@@ -32,3 +29,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # run file migration script
 ./scripts/migrate_files.sh
+
+# Install vim plugins per init.vim
+nvim -es -u init.vim -i NONE -c "PlugInstall" -c "qa"

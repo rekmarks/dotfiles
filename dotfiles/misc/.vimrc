@@ -29,7 +29,8 @@ augroup indentation_sr
 augroup END
 
 " PLUGINS
-call plug#begin('~/.vim/plugged')
+let g:plug_home = stdpath("data") . "/plugged"
+call plug#begin(plug_home)
 
 Plug 'bronson/vim-trailing-whitespace' " Trailing whitespace
 Plug 'itchyny/lightline.vim' " Status line / tab line plugin for Vim

@@ -6,7 +6,13 @@
 ### misc
 
 # print empty line before prompt (called by zsh)
-precmd () { print "" }
+precmd () {
+  if [[ $NEW_LINE_BEFORE_PROMPT -eq 1 ]]; then
+    print ""
+  elif [[ $NEW_LINE_BEFORE_PROMPT -ne 1 ]]; then
+    NEW_LINE_BEFORE_PROMPT=1
+  fi
+}
 
 ### colors
 
