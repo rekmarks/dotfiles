@@ -16,6 +16,8 @@
 
 ## Recovery
 
+> Some zsh plugins must be installed manually, see [below](#packages-frameworks).
+
 Attempt a fresh install by running `yarn install:fresh` or `./scripts/fresh_install.sh`.
 If the script fails, see its contents for manual steps.
 
@@ -31,6 +33,8 @@ If the script fails, see its contents for manual steps.
   - [vim-plug](https://github.com/junegunn/vim-plug)
 - [nvm](https://github.com/nvm-sh/nvm)
 - [Oh My ZSH!](https://ohmyz.sh/)
+- Manually installed zsh plugins
+  - [yarn-autocompletions](https://github.com/g-plane/zsh-yarn-autocompletions)
 - [pyenv](https://github.com/pyenv/pyenv)
 - [tmux](https://github.com/tmux/tmux/)
   - [TPM](https://github.com/tmux-plugins/tpm)

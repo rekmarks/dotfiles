@@ -49,14 +49,16 @@ alias clear="NEW_LINE_BEFORE_PROMPT=-1 && clear"
 export ZSH_THEME="101"
 
 plugins=(
+  # OMZ plugins
   git # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
   node # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/node
   nvm # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm
   pyenv # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pyenv
-  yarn # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/yarn
   tmux # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
   vscode # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode
   web-search # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
+  # Manually installed
+  yarn-autocompletions # https://github.com/g-plane/zsh-yarn-autocompletions
 )
 
 ZSH_PYENV_QUIET=true
@@ -108,6 +110,7 @@ alias ,='cd ..'
 alias n='nvim'
 alias c='clear'
 alias home="cd ~ && clear"
+alias y="yarn"
 
 # upgrade
 alias upgrade="sudo apt-get update && sudo apt-get upgrade"
