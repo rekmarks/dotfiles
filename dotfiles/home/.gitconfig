@@ -1,8 +1,6 @@
 [user]
 	email = rekmarks@protonmail.com
 	name = Erik Marks
-[credential]
-  helper = osxkeychain
 [core]
 	editor = nvim
   excludesfile = ~/.gitignore
