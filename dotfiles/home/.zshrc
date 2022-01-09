@@ -109,8 +109,9 @@ lss () {
 alias ,='cd ..'
 alias n='nvim'
 alias c='clear'
-alias home="cd ~ && clear"
-alias y="yarn"
+alias home='cd ~ && clear'
+alias y='yarn'
+alias xclipb='xclip -sel clip'
 
 # upgrade
 alias upgrade="sudo apt-get update && sudo apt-get upgrade"
@@ -184,11 +185,11 @@ gcap () {
 alias ghr="git rev-parse --short HEAD"
 
 # Copy the HEAD shorthash, without a trailing newline
-alias ghrcp="ghr | tr -d '\n' | pbcopy"
+alias ghrcp="ghr | tr -d '\n' | xclipb"
 
 # Copy the fork point with the given base branch, without a trailing newline
 gfp () {
-  git merge-base --fork-point $1 | tr -d '\n' | pbcopy
+  git merge-base --fork-point $1 | tr -d '\n' | xclipb
 }
 
 # Recall that "gpsup" is:
@@ -214,6 +215,15 @@ gbpsup () {
 # remote. Assumes the local has the version bump changes.
 gpbump () {
   gbpsup $1 $1
+}
+
+# Get a working GitHub "Co-authored-by" attribution string for the specified user.
+ghattr () {
+  if [ -z "$1" ]; then
+    echo "Must specify a valid GitHub user name"
+  else
+    gh api "users/$1" | jq -r '"Co-authored-by: \(.name // .login) <\(.id)+\(.login)@users.noreply.github.com>"' | xclipb
+  fi
 }
 
 ### ssh

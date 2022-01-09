@@ -13,7 +13,7 @@ ln -s ~/.config/nvim/init.vim ~/.vimrc
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 
 # install required packages
-sudo pacman -Syu gpg nvim tmux git
+sudo pacman -Syu gpg nvim tmux git xclip xsel jq
 
 # python
 ./scripts/install/install_python.sh
