@@ -218,6 +218,7 @@ gpbump () {
 }
 
 # Get a working GitHub "Co-authored-by" attribution string for the specified user.
+# Kudos https://github.com/ghostbear/coauthoredby for the original JavaScript implementation.
 ghattr () {
   if [ -z "$1" ]; then
     echo "Must specify a valid GitHub user name"
