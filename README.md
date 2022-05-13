@@ -30,9 +30,12 @@
     - `:PlugInstall`
     - `:so ~/.vimrc` or restart `nvim`
   - GPG signing
-    - Download [GPG Tools](https://gpgtools.org/)
-    - If you were smart and saved your GPG key, you can reuse it.
-    - Whatever the case, follow [these instructions](https://help.github.com/en/articles/managing-commit-signature-verification).
+    - Download and install [GPG Tools](https://gpgtools.org/)
+    - Follow [these instructions](https://help.github.com/en/articles/managing-commit-signature-verification) to generate a new key.
+      - Old GPG keys can be reused if they were managed appropriately.
+    - Run the following git commands:
+      - `git config --global user.signingkey <YOUR-SIGNING-KEY-PUB-ID>`
+      - `git config --global commit.gpgsign true`
 
 ### Gotchas
 

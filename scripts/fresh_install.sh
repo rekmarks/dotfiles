@@ -12,9 +12,10 @@ ln -s ~/.config/nvim/init.vim ~/.vimrc
 # install homebrew packages
 brew install git
 brew link --force git
-brew install nvim
-brew install tmux
-brew install shellcheck
+# various
+brew install nvim tmux shellcheck
+# gpg signing-related
+brew install gnupg pinentry-mac
 
 # pyenv requirement
 xcode-select --install
