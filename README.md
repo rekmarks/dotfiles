@@ -29,6 +29,7 @@ If the script fails, see its contents for manual steps.
 
 ## Packages & Frameworks
 
+- [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 - [Neovim](https://neovim.io/)
   - [vim-plug](https://github.com/junegunn/vim-plug)
 - [nvm](https://github.com/nvm-sh/nvm)

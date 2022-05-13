@@ -21,9 +21,6 @@ sudo pacman -Syu gpg nvim tmux git xclip xsel jq
 # junegunn/vim-plug
 ./scripts/install/install_vim_plug.sh
 
-# nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-
 # tmux plugin manager (TPM)
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
