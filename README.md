@@ -21,16 +21,17 @@
     - `brew install yarn`
   - Oh My ZSH!
     - `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+  - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 - Then, attempt automatic reinstall
-  - `yarn i`
-  - If the script fails, see contents for manual steps
+  - `yarn install:fresh`
+  - If the script fails, see contents for manual steps.
 - Finally
   - In a running instance of `nvim`
     - `:PlugInstall`
     - `:so ~/.vimrc` or restart `nvim`
   - GPG signing
     - [download](https://gpgtools.org/)
-    - If you were smart and saved your GPG key, you can reuse it
+    - If you were smart and saved your GPG key, you can reuse it.
     - Whatever the case, follow [these instructions](https://help.github.com/en/articles/managing-commit-signature-verification)
 
 ### gotchas
@@ -42,6 +43,7 @@
 ## packages used
 
 - [Homebrew](https://brew.sh)
+- [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 - [Neovim](https://neovim.io/)
   - [vim-plug](https://github.com/junegunn/vim-plug)
 - [NVM](https://github.com/nvm-sh/nvm)
