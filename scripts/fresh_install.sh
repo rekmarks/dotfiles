@@ -10,10 +10,11 @@ mkdir -p ~/.nvm
 ln -s ~/.config/nvim/init.vim ~/.vimrc
 
 # install homebrew packages
-brew install nvim
-brew install tmux
 brew install git
 brew link --force git
+brew install nvim
+brew install tmux
+brew install shellcheck
 
 # pyenv requirement
 xcode-select --install

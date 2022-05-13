@@ -2,7 +2,7 @@
 
 ![Current terminal appearance](./current_terminal.png)
 
-## usage
+## Usage
 
 - Platform
   - **macOS**
@@ -14,33 +14,33 @@
 - To migrate dotfiles
   - `yarn m`
 
-## recovery
+## Recovery
 
-- First
-  - Install `homebrew` from [brew.sh](https://brew.sh)
+- First, install:
+  - `homebrew` from [brew.sh](https://brew.sh)
     - `brew install yarn`
   - Oh My ZSH!
     - `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
   - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-- Then, attempt automatic reinstall
+- Then, attempt automatic reinstall:
   - `yarn install:fresh`
   - If the script fails, see contents for manual steps.
-- Finally
+- Finally:
   - In a running instance of `nvim`
     - `:PlugInstall`
     - `:so ~/.vimrc` or restart `nvim`
   - GPG signing
-    - [download](https://gpgtools.org/)
+    - Download [GPG Tools](https://gpgtools.org/)
     - If you were smart and saved your GPG key, you can reuse it.
-    - Whatever the case, follow [these instructions](https://help.github.com/en/articles/managing-commit-signature-verification)
+    - Whatever the case, follow [these instructions](https://help.github.com/en/articles/managing-commit-signature-verification).
 
-### gotchas
+### Gotchas
 
 - `pyenv`
   - Check that the desired versions are listed in `scripts/install/install_python.sh`
   - Sometimes after updating, you have to run `pyenv rehash` to properly update PATH
 
-## packages used
+## Packages & Frameworks
 
 - [Homebrew](https://brew.sh)
 - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
