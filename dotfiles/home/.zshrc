@@ -50,6 +50,7 @@ export ZSH_THEME="101"
 
 plugins=(
   git # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
+  gpg-agent # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gpg-agent
   node # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/node
   nvm # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm
   pyenv # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pyenv
@@ -212,20 +213,6 @@ gbpsup () {
 gpbump () {
   gbpsup $1 $1
 }
-
-### GPG Signing
-# Kudos: https://gist.github.com/bmhatfield/cc21ec0a3a2df963bffa3c1f884b676b
-
-# In order for gpg to find gpg-agent, gpg-agent must be running, and there must be an env
-# variable pointing GPG to the gpg-agent socket. This script will either start gpg-agent
-# or set up the GPG_AGENT_INFO variable if it's already running.
-
-if [ -f ~/.gnupg/.gpg-agent-info ] && [ -n "$(pgrep gpg-agent)" ]; then
-    source ~/.gnupg/.gpg-agent-info
-    export GPG_AGENT_INFO
-else
-    eval $(gpg-agent --daemon --write-env-file ~/.gnupg/.gpg-agent-info)
-fi
 
 ### Python
 
