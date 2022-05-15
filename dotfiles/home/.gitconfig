@@ -1,16 +1,18 @@
 [user]
-	email = rekmarks@protonmail.com
-	name = Erik Marks
+  email = rekmarks@protonmail.com
+  name = Erik Marks
 [credential]
   helper = osxkeychain
+[commit]
+  gpgsign = true
 [core]
-	editor = nvim
+  editor = nvim
   excludesfile = ~/.gitignore
   pager = cat
 [push]
   default = current
 [pull]
-	rebase = true
+  rebase = true
 [ssh]
   postBuffer = 524288000
 [alias]
