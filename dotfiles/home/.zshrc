@@ -269,11 +269,16 @@ PATH="$HOME/.cargo/bin:$PATH"
 
 ### Android
 
-export ANDROID_HOME=$HOME/Library/Android/sdk
-PATH=$PATH:$ANDROID_HOME/emulator
-PATH=$PATH:$ANDROID_HOME/tools
-PATH=$PATH:$ANDROID_HOME/tools/bin
-PATH=$PATH:$ANDROID_HOME/platform-tools
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+PATH="$PATH:$ANDROID_HOME/emulator"
+PATH="$PATH:$ANDROID_HOME/tools"
+PATH="$PATH:$ANDROID_HOME/tools/bin"
+PATH="$PATH:$ANDROID_HOME/platform-tools"
+
+### Visual Studio Code
+
+# Append binary path to PATH to support `code` terminal command
+PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 #################################
 ############## FIN ##############
