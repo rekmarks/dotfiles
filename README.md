@@ -18,10 +18,12 @@
 
 - First, install:
   - `homebrew` from [brew.sh](https://brew.sh)
-    - `brew install yarn`
+    - Upon completion, run `brew install yarn`
+    - Other `homebrew` packages will be installed automatically.
   - Oh My ZSH!
     - `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
   - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+  - [Visual Studio Code](https://code.visualstudio.com/Download)
 - Then, attempt automatic reinstall:
   - `yarn install:fresh`
   - If the script fails, see contents for manual steps.
