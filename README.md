@@ -44,6 +44,8 @@
 - `pyenv`
   - Check that the desired versions are listed in `scripts/install/install_python.sh`
   - Sometimes after updating, you have to run `pyenv rehash` to properly update PATH
+- `ssh`
+  - SSH requires some manual setup, even after generating new keys. See [here](https://docs.github.com/en/enterprise-server@3.5/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#adding-your-ssh-key-to-the-ssh-agent).
 
 ## Packages & Frameworks
 
