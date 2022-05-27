@@ -146,6 +146,16 @@ alias gafx='gaa && gfx'
 
 alias gafxp='gafx && gp'
 
+# "pull" a branch other than the current one from origin
+glb () {
+  git fetch origin $1:$1
+}
+
+# "pull" a branch other than the current one from the specified remote
+glbr () {
+  git fetch $1 $2:$2
+}
+
 # git log
 alias glg='git log --stat --reverse'
 
