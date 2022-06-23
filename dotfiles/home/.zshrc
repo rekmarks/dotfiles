@@ -156,6 +156,10 @@ glbr () {
   git fetch $1 $2:$2
 }
 
+glbrm () {
+  glbr origin main
+}
+
 # git log
 alias glg='git log --stat --reverse'
 
