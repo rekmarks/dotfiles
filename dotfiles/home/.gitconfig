@@ -5,10 +5,13 @@
 	editor = nvim
   excludesfile = ~/.gitignore
   pager = cat
+[init]
+  defaultBranch = main
+[pull]
+  rebase = true
 [push]
   default = current
-[pull]
-	rebase = true
+  autoSetupRemote = true
 [ssh]
   postBuffer = 524288000
 [alias]
