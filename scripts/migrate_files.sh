@@ -15,6 +15,7 @@ migrate_files() {
   _eval "cp ./dotfiles/gpg/* ~/.gnupg" # nvm default packages
   _eval "cp ./dotfiles/misc/.vimrc ~/.config/nvim/init.vim" # neovim
   _eval "cp ./dotfiles/nvm/default-packages \"$NVM_DIR\"" # nvm default packages
+  _eval "cp ./dotfiles/cargo/config.toml ~/.cargo" # cargo config
   _eval "cp ./themes/oh-my-zsh/101.zsh-theme ~/.oh-my-zsh/custom/themes" # oh-my-zsh theme
 
   unset -f _eval

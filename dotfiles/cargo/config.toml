@@ -1,0 +1,7 @@
+[target.'cfg(all())']
+rustflags = [
+  # explicity enable clippy warning defaults
+  "-Wclippy::all",
+  # make clippy pedantic by default
+  "-Wclippy::pedantic",
+]
