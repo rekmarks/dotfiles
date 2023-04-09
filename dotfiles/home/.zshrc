@@ -104,6 +104,15 @@ lss () {
     find $dir -maxdepth 1 -type l -ls
 }
 
+# rust aliases
+alias crb='cargo build'
+alias crbl='cargo build --release'
+alias crc='cargo check'
+alias crcl='cargo clippy'
+alias crr='cargo run'
+alias crt='cargo test'
+alias rup='rustup update'
+
 # Misc. convenience aliases
 alias ,='cd ..'
 alias n='nvim'
