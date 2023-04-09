@@ -6,6 +6,8 @@ set softtabstop=2 "tab length
 set shiftwidth=2 "shift length
 set showtabline=2 "show tab dif
 set expandtab "spaces are tabs
+set autoindent "auto indent
+set smartindent "smart auto indent, should be used with autoindent
 set number "line numbers
 set cursorline "highlight current line
 set nowrap "remove auto wrap
@@ -25,6 +27,7 @@ augroup indentation_sr
   autocmd!
   autocmd Filetype * setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=8
   autocmd Filetype python setlocal shiftwidth=4 softtabstop=4 tabstop=8
+  autocmd Filetype rust setlocal shiftwidth=4 softtabstop=4 tabstop=8
   autocmd Filetype yaml setlocal indentkeys-=<:>
 augroup END
 
@@ -36,11 +39,10 @@ Plug 'itchyny/lightline.vim' " Status line / tab line plugin for Vim
 Plug 'wincent/terminus' " Enhanced terminal integration
 Plug 'henrik/vim-indexed-search' " Indexed search
 Plug 'hdima/python-syntax' " Python syntax
-Plug 'Townk/vim-autoclose' " Autoclose brackets, etc.
+Plug 'jiangmiao/auto-pairs' " Autoclose brackets, etc.
 Plug 'godlygeek/tabular' " Markdown plugin
 Plug 'junegunn/goyo.vim' " Distraction-free writing
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine' " Dotted lines tracking indentation levels
 Plug 'pangloss/vim-javascript' " JavaScript syntax
 Plug 'mxw/vim-jsx' " JSX syntax
 Plug 'elzr/vim-json' " JSON syntax
@@ -48,14 +50,11 @@ Plug 'ianks/vim-tsx' " .tsx syntax
 Plug 'moll/vim-node' " Node plugin
 Plug 'lifepillar/vim-solarized8' " Solarized color scheme
 Plug 'tomlion/vim-solidity' " Solidity syntax
+Plug 'rust-lang/rust.vim' " Rust syntax
 
 call plug#end()
 
 " PLUGIN CONFIGURATION
-
-"vim-jsdoc
-let g:jsdoc_allow_input_prompt=1
-let g:jsdoc_enable_es6=1
 
 " vim-json
 let g:vim_json_syntax_conceal=0
