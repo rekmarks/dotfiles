@@ -54,10 +54,11 @@ plugins=(
   node # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/node
   nvm # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/nvm
   pyenv # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/pyenv
-  yarn # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/yarn
+  rust # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/rust
   tmux # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
   vscode # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode
   web-search # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/web-search
+  yarn # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/yarn
 )
 
 ZSH_PYENV_QUIET=true
