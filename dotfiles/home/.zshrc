@@ -293,6 +293,13 @@ PATH="$PATH:$ANDROID_HOME/platform-tools"
 # Append binary path to PATH to support `code` terminal command
 PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
+### ssh
+
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval `ssh-agent -s`
+  ssh-add --apple-load-keychain
+fi
+
 #################################
 ############## FIN ##############
 #################################
