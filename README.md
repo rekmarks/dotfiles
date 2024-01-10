@@ -39,6 +39,12 @@
       - `git config --global user.signingkey <YOUR-SIGNING-KEY-PUB-ID>`
       - `git config --global commit.gpgsign true`
 
+### Optional
+
+- Guile
+  - `brew install guile`
+  - See "Guile" in `.zshrc`
+
 ### Gotchas
 
 - `pyenv`
