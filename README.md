@@ -12,7 +12,7 @@
 - For reloading `.vimrc` without restarting vim
   - `:so ~/.vimrc`
 - To migrate dotfiles
-  - `yarn m`
+  - `npm run m`
 
 ## Recovery
 
@@ -25,7 +25,7 @@
   - [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
   - [Visual Studio Code](https://code.visualstudio.com/Download)
 - Then, attempt automatic reinstall:
-  - `yarn install:fresh`
+  - `npm run install:fresh`
   - If the script fails, see contents for manual steps.
 - Finally:
   - In a running instance of `nvim`

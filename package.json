@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "m": "yarn migrate",
+    "m": "npm run migrate",
     "migrate": "./scripts/migrate_files.sh",
     "install:fresh": "./scripts/fresh_install.sh",
     "install:python": "./scripts/install/install_python.sh",
