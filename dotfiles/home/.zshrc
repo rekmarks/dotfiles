@@ -297,6 +297,10 @@ PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 if [ -z "$SSH_AUTH_SOCK" ]; then
   eval `ssh-agent -s`
+fi
+
+# Check if any keys are currently loaded into ssh-agent
+if ! ssh-add -l &>/dev/null; then
   ssh-add --apple-load-keychain
 fi
 
