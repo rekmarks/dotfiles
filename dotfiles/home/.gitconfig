@@ -16,6 +16,11 @@
 [push]
   default = current
   autoSetupRemote = true
+[rebase]
+  # Automatically combines "squash!" and "fixup!" commits with their targets
+  autoSquash = true
+  # Automatically stashes changes before rebasing, and applies them after
+  autoStash = true
 [ssh]
   postBuffer = 524288000
 [alias]
