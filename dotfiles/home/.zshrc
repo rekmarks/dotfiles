@@ -151,7 +151,9 @@ alias gpf='git push --force-with-lease'
 
 alias gpF='git push --force'
 
-alias gfx='git commit --fixup HEAD'
+alias gfx='git commit --fixup'
+
+alias gfxh='gfx HEAD'
 
 # gaa = git add --all
 alias gaac='gaa && gc'
