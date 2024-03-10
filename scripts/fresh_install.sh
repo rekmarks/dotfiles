@@ -27,6 +27,9 @@ xcode-select --install
 # python
 ./scripts/install/install_python.sh
 
+# rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 # junegunn/vim-plug
 ./scripts/install/install_vim_plug.sh
 
