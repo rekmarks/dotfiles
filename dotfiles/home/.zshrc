@@ -63,6 +63,9 @@ plugins=(
 
 ZSH_PYENV_QUIET=true
 
+# Binaries should be added to path before sourcing oh-my-zsh.sh
+PATH="/usr/local/bin:/opt/homebrew/bin:$PATH"
+
 source $ZSH/oh-my-zsh.sh
 
 #################################
@@ -74,6 +77,7 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
 #################################
+############ GENERIC ############
 ############# SHELL #############
 ############ ALIASES ############
 #################################
@@ -105,17 +109,6 @@ lss () {
     find $dir -maxdepth 1 -type l -ls
 }
 
-# rust aliases
-alias crb='cargo build'
-alias crbl='cargo build --release'
-alias crc='cargo check'
-alias crcl='cargo clippy'
-alias crfmt='cargo fmt'
-alias crfcl='cargo fmt && cargo clippy'
-alias crr='cargo run'
-alias crt='cargo test'
-alias rup='rustup update'
-
 # Misc. convenience aliases
 alias ,='cd ..'
 alias n='nvim'
@@ -123,7 +116,7 @@ alias c='clear'
 alias home="cd ~ && clear"
 
 # upgrade
-alias upgrade="sudo apt-get update && sudo apt-get upgrade"
+alias apt-upgrade="sudo apt-get update && sudo apt-get upgrade"
 
 # Function for re-executing zsh to reset source 
 so () {
@@ -135,6 +128,11 @@ so () {
 ##############  &  ##############
 ########### LANGUAGES ###########
 #################################
+
+
+### Homebrew
+
+PATH="$PATH:/opt/homebrew/bin"
 
 ### tmux
 
@@ -282,7 +280,18 @@ add-zsh-hook chpwd load_nvmrc
 
 ### Rust
 
-PATH="$HOME/.cargo/bin:$PATH"
+PATH="$PATH:$HOME/.cargo/bin"
+
+# aliases
+alias crb='cargo build'
+alias crbl='cargo build --release'
+alias crc='cargo check'
+alias crcl='cargo clippy'
+alias crfmt='cargo fmt'
+alias crfcl='cargo fmt && cargo clippy'
+alias crr='cargo run'
+alias crt='cargo test'
+alias rup='rustup update'
 
 ### Guile (homebrew installation)
 
@@ -318,8 +327,7 @@ fi
 ############## FIN ##############
 #################################
 
-# Add local binaries to PATH and export it
-export PATH="/usr/local/bin:$PATH"
+export PATH
 
 # This must be called after exporting PATH
 load_nvmrc
