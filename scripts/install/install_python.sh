@@ -1,4 +1,8 @@
-#! /bin/sh
+#! /bin/bash
+
+set -e
+set -u
+set -o pipefail
 
 # set these manually
 PYTHON_3_VERSION="3.9.2"

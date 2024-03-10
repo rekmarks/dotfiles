@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+set -e
+set -u
+set -o pipefail
+
 migrate_files() {
 
   local return_code=0

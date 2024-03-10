@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+set -e
+set -u
+set -o pipefail
+
 # create nvim dir in ~/.config if it does not exist
 mkdir -p ~/.config/nvim
 
