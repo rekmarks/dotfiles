@@ -272,8 +272,7 @@ load_nvmrc () {
       nvm use
     fi
   elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
+    nvm use default > /dev/null 2>&1
   fi
 }
 add-zsh-hook chpwd load_nvmrc
